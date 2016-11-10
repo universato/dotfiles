@@ -29,6 +29,7 @@ else
 endif
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
+"set number             " 左側に行番号を表示
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
@@ -95,3 +96,17 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+"これでクリップボードでコピーできるようになる？
+:set clipboard+=autoselect
+:set clipboard+=unnamed
+:set clipboard=unnamedplus
+":set clipboard+=autoselect
+
+
+set expandtab
+set tabstop=2 "タブの幅
+set shiftwidth=2 "自動インデントでずれる幅
+set softtabstop=2
+set autoindent "改行時に前の行のインデントを継続
+set smartindent
