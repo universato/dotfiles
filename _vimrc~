@@ -1,3 +1,5 @@
+set number
+set ww=<,>,h,l
 
 " An example for a vimrc file.
 "

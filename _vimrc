@@ -1,4 +1,3 @@
-
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -30,7 +29,7 @@ endif
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 "set number             " 左側に行番号を表示
-set nonumber
+"set nonumber
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
@@ -117,3 +116,10 @@ set display=lastline "一行の文字数が多い時に、@@@で省略される�
 "対応するかぎかっこにわずかな時間飛ぶ。
 set showmatch
 set matchtime=1
+
+" display number of line on left
+set number
+
+" 前後の行の行末・行頭を横移動で移動できるようにする。
+" ww(whichwrap)
+set ww=<,>,h,l
