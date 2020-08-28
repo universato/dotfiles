@@ -122,4 +122,4 @@ set number
 
 " 前後の行の行末・行頭を横移動で移動できるようにする。
 " ww(whichwrap)
-set ww=<,>,h,l
+set ww=<,>,[,],h,l
