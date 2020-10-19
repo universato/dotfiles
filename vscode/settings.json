@@ -1,0 +1,90 @@
+{
+    "autocompleteSymbols.enabledLanguages": ["ruby"],
+    "editor.renderControlCharacters": true,
+    "editor.snippetSuggestions": "top",
+    // "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "gitlens.defaultDateFormat": "YYYY/MM/DD HH:mm",
+    "gitlens.defaultDateShortFormat": "YYYY/MM/DD",
+    "hamlLint.useBundler": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "ruby.intellisense": "rubyLocate",
+    "ruby.useLanguageServer": true,
+    "solargraph.definitions": true,
+    "solargraph.diagnostics": true,
+    "yaml.schemas": {
+        "http://json.schemastore.org/circleciconfig": "/.circleci/config.yml"
+    },
+    "window.zoomLevel": -1,
+    "workbench.iconTheme": "vscode-icons",
+    "snippetsByPattern.snippets": {
+        "**/settings.json": {
+            "short snippet": {
+                "prefix": "ss",
+                "body": ["\"$1\": {", "\t\"prefix\": \"$2\",", "\t\"body\": \"$3\",", "},"],
+            }
+        },
+        "**/db/migrate/*.rb": {
+            "add_column": {
+                "prefix": "add_column",
+                "body": ["add_column :${1:table_name}, :${2:column_name}, :${3:type}${4, :null: false}"],
+            },
+            "add_index": {
+                "prefix": "add_index",
+                "body": ["add_index :${1:table_name}, :${2:column_name}"],
+            },
+            "change_method": {
+                "prefix": "change",
+                "body": [
+                    "def chnge",
+                    "  add_column :${1:table_name}, :${2:column_name}, :${3:type}${4, :null: false}",
+                    "end"
+                ],
+            },
+            "remove_index": {
+                "prefix": "remove_index",
+                "body": ["remove_index :${1:table_name}, :${2:column_name}"]
+            },
+            "not null": {
+                "prefix": "null",
+                "body": "null: false",
+            },
+            "unique true": {
+                "prefix": "unique",
+                "body": "unique: true",
+            },
+        },
+        "**/Gemfile": {
+            "gems": {
+                "prefix": "gems",
+                "body": "gem '$1'",
+            },
+            "gemd": {
+                "prefix": "gemd",
+                "body": "gem \"$1\"",
+            },
+            "image_processing": {
+                "prefix": "image_processing",
+                "body": "image_processing",
+            },
+            "kaminari": {
+                "prefix": "kaminari",
+                "body": "kaminari",
+            },
+            "sass-rails": {
+                "prefix": "sass-rails",
+                "body": "sass-rails",
+            },
+            "slack-notifier": {
+                "prefix": "slack-notifier",
+                "body": "slack-notifier",
+            },
+        },
+    },
+}

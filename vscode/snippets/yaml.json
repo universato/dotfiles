@@ -1,0 +1,18 @@
+{
+  "Snippet": {
+    "prefix": "sni",
+    "body": [
+      "${1:title}:",
+      "  prefix: $2",
+      "  body: |-",
+      "    $3",
+      "  description: $4"
+    ],
+    "description": "Snippet"
+  },
+  "Short snippet": {
+    "prefix": "ssnippet",
+    "body": ["${1:title}:", "  prefix: $2", "  body: $3", "  description: $4"],
+    "description": "Short snippet"
+  }
+}

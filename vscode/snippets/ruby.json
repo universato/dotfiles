@@ -1,0 +1,107 @@
+{
+  "assert_equal": {
+    "prefix": "assert_equal",
+    "body": "assert_equal ${1:expected}, ${2:actual}",
+  },
+  "attr_accessor": { "prefix": "attr_accessor", "body": "attr_accessor: :$1" },
+  "attr_reader": { "prefix": "attr_reader", "body": "attr_reader: :$1" },
+  "attr_writer": { "prefix": "attr_writer", "body": "attr_writer: :$1" },
+  "bm": {
+    "prefix": "bm",
+    "body": [
+      "Benchmark.bmbm do |r|",
+      "  r.report(\"$1\"){ $2 }",
+      "  r.report(\"$3\"){ $4 }",
+      "end"
+    ]
+  },
+  "bmbm": {
+    "prefix": "bmbm",
+    "body": [
+      "Benchmark.bmbm do |j|",
+      "  j.report(\"$1\"){ $2 }",
+      "  j.report(\"$3\"){ $4 }",
+      "end"
+    ]
+  },
+  "benchmark": {
+    "prefix": "benchmark",
+    "body": [
+      "require \"benchmark\"",
+      "",
+      "Benchmark.bmbm do |j|",
+      "  j.report(\"$1\"){ $2 }",
+      "  j.report(\"$3\"){ $4 }",
+      "end"
+    ]
+  },
+  "class difinition": {
+    "prefix": "class",
+    "body": [
+      "class $1",
+      "  $2",
+      "end",
+    ],
+    "description": "class difinition"
+  },
+  "current_user for Rails gem:Devise": {
+    "prefix": "curernt_user",
+    "body": "current_user."
+  },
+  "def - method difinition": {
+    "prefix": "def",
+    "body": [
+      "def $1",
+      "  $2",
+      "end",
+    ],
+  },
+  "environment": {
+    "prefix": "environment",
+    "body": "environment",
+  },
+  "frozen_string_literal": {
+    "prefix": "frozen_string_literal",
+    "body": "# frozen_string_literal: true"
+  },
+  "get array": {
+    "prefix": "ga",
+    "body": "${1:a} = gets.split.map{ |e| e.to_i }",
+  },
+  "get array of string": {
+      "prefix": "gas",
+      "body": "${1:m} = Array.new(${2:n}){ gets.chomp }",
+  },
+  "get integer": {
+      "prefix": "gi",
+      "body": "${1:n} = gets.to_i",
+  },
+  "get matrix of integer": {
+    "prefix": "gm",
+    "body": "${1:m} = Array.new(${2:n}){ gets.split.map{ |e| e.to_i } }",
+  },
+  "get string": {
+      "prefix": "gs",
+      "body": "${1:s} = gets.chomp",
+  },
+  "initialize_method": {
+    "prefix": "initialize",
+    "body": ["def initialize", "  $1", "end"]
+  },
+  "minitest": {
+    "prefix": "minitest",
+    "body": [
+      "require \"minitest\"",
+      "require \"minitest/autorun\"",
+      "",
+      "class $1 < Minitest::Test",
+      "  def test_$2",
+      "    $3",
+      "  end",
+      "end"
+    ]
+  },
+  "require double": { "prefix": "reqd", "body": "require \"$0\"" },
+  "require single": { "prefix": "reqs", "body": "require '$0'" },
+  "user where": { "prefix": "userw", "body": "User.where" }
+}

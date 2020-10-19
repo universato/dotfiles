@@ -1,4 +1,3 @@
-
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -29,6 +28,8 @@ else
 endif
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
+"set number             " 左側に行番号を表示
+"set nonumber
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
@@ -95,3 +96,30 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+"これでクリップボードでコピーできるようになる？
+:set clipboard+=autoselect
+:set clipboard+=unnamed
+":set clipboard=unnamedplus " これがあるとyyが機能しなくなる
+":set clipboard+=autoselect
+
+
+set expandtab
+set tabstop=2 "タブの幅
+set shiftwidth=2 "自動インデントでずれる幅
+set softtabstop=2
+set autoindent "改行時に前の行のインデントを継続
+set smartindent
+
+set display=lastline "一行の文字数が多い時に、@@@で省略されるのを防ぐ。最後まで見せる。
+
+"対応するかぎかっこにわずかな時間飛ぶ。
+set showmatch
+set matchtime=1
+
+" display number of line on left
+set number
+
+" 前後の行の行末・行頭を横移動で移動できるようにする。
+" ww(whichwrap)
+set ww=<,>,[,],h,l

@@ -1,0 +1,14 @@
+# Mac
+# .DS_Storeは有名。
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# vscode
+.vscode/
+
+# vim
+*.swp
+*~
+*.un~
