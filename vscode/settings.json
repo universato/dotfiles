@@ -21,7 +21,7 @@
     "yaml.schemas": {
         "http://json.schemastore.org/circleciconfig": "/.circleci/config.yml"
     },
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 1,
     "workbench.iconTheme": "vscode-icons",
     "snippetsByPattern.snippets": {
         "**/settings.json": {

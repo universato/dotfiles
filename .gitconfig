@@ -166,6 +166,8 @@
 	psfo = push -f origin
 	psfom = push -f origin main
 	psh = push
+	psho = push origin
+	psho = push origin main
 	pul = pull
 	pullo = pull origin
 	pullom = pull origin main

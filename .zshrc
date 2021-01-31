@@ -93,8 +93,8 @@ echo ''
 # 以下のコードは過剰?
 # fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 # 下のコードで補完機能が使えるようになるらしい。
-# autoload -U compinit
-# compinit -u
+autoload -U compinit
+compinit -u
 
 # Promptの右端に今のブランチを表示する。
 # https://git-scm.com/book/ja/v2/Appendix-A%3A-%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEGit-Zsh%E3%81%A7Git%E3%82%92%E4%BD%BF%E3%81%86
@@ -192,10 +192,12 @@ alias cmm='git commit -m'
 alias cma='git commit --amend'
 alias cmam='git commit --amend'
 alias cmad='git commit --amend'
-# alias co='git checkout'
+# alias co='git checkout' # switch使えば必要ないのでは。
 alias co='code'
 alias co.='code .'
-alias cod='code'
+alias coc='code' # for spell miss
+alias coce='code' # for spell miss
+alias cod.='code .'
 alias cod.='code .'
 alias code.='code .'
 alias code.='code .'
@@ -443,6 +445,10 @@ alias gpusf='git push -f'
 alias gpush='git push'
 alias gpushf='git push -f'
 alias gps='git push'
+alias gpsh='git push'
+alias gpsho='git push origin'
+alias gpshm='git push origin main'
+alias gpshom='git push origin main'
 alias gpso='git push origin'
 alias gpullomain='git pull origin main'
 alias gr='grep'
@@ -590,6 +596,7 @@ alias rdbs='rails db:seed'
 alias rddrop='rails db:drop'
 alias rdc='rails db:create'
 alias rdm='rails db:migrate'
+alias rdr='rails db:reset'
 alias rds='rails db:seed'
 # alias rg='rails g'
 alias rg='rg'
@@ -646,14 +653,6 @@ alias until='until' # `until` is a keyword for shell
 alias us='git restore --staged'
 alias ust='git restore --staged'
 
-alias zenn='npx zenn'
-alias zennserve='npx zenn preview'
-alias zennpre='npx zenn preview'
-alias zennpreview='npx zenn preview'
-alias zp='npx zenn preview'
-alias zs='npx zenn preview'
-alias zshrc='cd ~/dotfiles/.zshrc'
-
 alias v='vim'
 # alias v='code'
 alias vag='vagrant'
@@ -666,6 +665,21 @@ alias vscode.='code.'
 alias vz='vim ~/dotfiles/.zshrc'
 
 alias while='while' # `while` is a keyword for shell
+
+alias y='yarn'
+alias ya='yarn'
+alias yar='yarn'
+alias yi='yarn install'
+alias yic='yarn install --check-files'
+alias yicf='yarn install --check-files'
+
+alias zenn='npx zenn'
+alias zennserve='npx zenn preview'
+alias zennpre='npx zenn preview'
+alias zennpreview='npx zenn preview'
+alias zp='npx zenn preview'
+alias zs='npx zenn preview'
+alias zshrc='cd ~/dotfiles/.zshrc'
 
 alias -s html='open'
 alias -s js='node'
