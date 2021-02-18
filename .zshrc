@@ -96,16 +96,16 @@ echo ''
 autoload -U compinit
 compinit -u
 
-# Promptの右端に今のブランチを表示する。
-# https://git-scm.com/book/ja/v2/Appendix-A%3A-%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEGit-Zsh%E3%81%A7Git%E3%82%92%E4%BD%BF%E3%81%86
+#### Promptの右端に今のブランチを表示する。
+#### https://git-scm.com/book/ja/v2/Appendix-A%3A-%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEGit-Zsh%E3%81%A7Git%E3%82%92%E4%BD%BF%E3%81%86
 # autoload -Uz compinit && compinit
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
-# PROMPT=\$vcs_info_msg_0_'%# '
-zstyle ':vcs_info:git:*' formats '%b'
+# autoload -Uz vcs_info
+# precmd_vcs_info() { vcs_info }
+# precmd_functions+=( precmd_vcs_info )
+# setopt prompt_subst
+# RPROMPT=\$vcs_info_msg_0_
+# # PROMPT=\$vcs_info_msg_0_'%# '
+# zstyle ':vcs_info:git:*' formats '%b'
 
 # vcs_info の使い方 あるいは prompt_subst のススメ - s9g https://s9g.hatenadiary.org/entry/20100504/vcs_info
 
@@ -721,46 +721,71 @@ alias until='until'
 # 世の中のエンジニアのalias設定 - Qiita
 # https://qiita.com/reireias/items/d906ab086c3bc4c22147
 
+#### zsh の右プロンプトを2行にする - Qiita
+#### https://qiita.com/eexiech8aNahShee/items/355cd4d884ce03656285
+# autoload -Uz vcs_info
+# zstyle ':vcs_info:*' formats '[%b]'
+# zstyle ':vcs_info:*' actionformats '[%b|%a]'
+# precmd () {
+#   # 1行あける
+#   print
 
-# https://qiita.com/eexiech8aNahShee/items/355cd4d884ce03656285
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '[%b]'
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
-precmd () {
-  # 1行あける
-  print
+#   # カレントディレクトリ
+#   # local left=' %{\e[38;5;2m%}(%~)%{\e[m%}'
+#   local left="%F{080}%~%f"
 
-  # カレントディレクトリ
-  # local left=' %{\e[38;5;2m%}(%~)%{\e[m%}'
-  local left="%F{080}%~%f"
+#   # バージョン管理されてた場合、ブランチ名
+#   vcs_info
+#   local right="%{\e[38;5;32m%}${vcs_info_msg_0_}%{\e[m%}"
+#   # スペースの長さを計算
+#   # テキストを装飾する場合、エスケープシーケンスをカウントしないようにします
+#   local invisible='%([BSUbfksu]|([FK]|){*})'
+#   local leftwidth=${#${(S%%)left//$~invisible/}}
+#   local rightwidth=${#${(S%%)right//$~invisible/}}
+#   local padwidth=$(($COLUMNS - ($leftwidth + $rightwidth) % $COLUMNS))
 
-  # バージョン管理されてた場合、ブランチ名
-  vcs_info
-  local right="%{\e[38;5;32m%}${vcs_info_msg_0_}%{\e[m%}"
-  # スペースの長さを計算
-  # テキストを装飾する場合、エスケープシーケンスをカウントしないようにします
-  local invisible='%([BSUbfksu]|([FK]|){*})'
-  local leftwidth=${#${(S%%)left//$~invisible/}}
-  local rightwidth=${#${(S%%)right//$~invisible/}}
-  local padwidth=$(($COLUMNS - ($leftwidth + $rightwidth) % $COLUMNS))
+#   print -P $left${(r:$padwidth:: :)}$right
+# }
+# # ユーザ名@ホスト名
+# # PROMPT='%n@%m %# '
+# PROMPT="%F{080}$ %f"
 
-  print -P $left${(r:$padwidth:: :)}$right
-}
-# ユーザ名@ホスト名
-# PROMPT='%n@%m %# '
-PROMPT="%F{080}$ %f"
+# # 現在時刻
+# # %D : むしろ消すと、current working directoryが表示される。
+# # %b : Month
+# # %d : day(date)
+# # %* : time(hh:mm:ss)
 
-# 現在時刻
-# %D : むしろ消すと、current working directoryが表示される。
-# %b : Month
-# %d : day(date)
-# %* : time(hh:mm:ss)
-
-RPROMPT=$'%{\e[38;5;251m%}%D{%b/%d} %*%{\e[m%}'
-TMOUT=1
-TRAPALRM() {
-  zle reset-prompt
-}
+# RPROMPT=$'%{\e[38;5;251m%}%D{%b/%d} %*%{\e[m%}'
+# TMOUT=1
+# TRAPALRM() {
+#   zle reset-prompt
+# }
 
 # $`%{\e[38;5;251m%}` :色の始まりかな。
 # vcs_info_msg_0_ : current branch
+
+#### zsh の右プロンプトを2行にする - Qiita
+#### https://qiita.com/eexiech8aNahShee/items/355cd4d884ce03656285
+## 右プロンプトを2行にしてないけど、ブランチの取得方法で、参考にした?
+## 上の方でも、vsc_infoとかロードしてる箇所あり。
+
+## [Git \- ZshでGitを使う](https://git-scm.com/book/ja/v2/Appendix-A%3A-%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEGit-Zsh%E3%81%A7Git%E3%82%92%E4%BD%BF%E3%81%86)
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+zstyle ':vcs_info:git:*' formats '%b'
+zstyle ':vcs_info:*' actionformats '%b(%a)'
+vcs_info
+PROMPT=$'\n%F{080}%~\n$ %f'
+RPROMPT="%F{blue}${vcs_info_msg_0_}%f"
+
+# vcs Version Control Systems?
+# $'' …… ダブルクォートで囲むと改行「\n」が反映されなかった。
+# %F{080} %f …… 水色。cyanは、もう少し濃かった。font colorのFか。背景色は、background colorから、kらしい。k???
+# formats '%b' …… %bはブランチ名。%aは、rebaseなどの特殊なアクション。
+
+# zstyle ':vcs_info:git:*' とgitを指定することで、gitというバージョン管理システムでのみ適用される。しかし、git以外のバージョン管理システムを使うことはないような気がするし、指定する必要もない気がする。
+
+#### setopt prompt_subst #…… $()埋め込みの変数をプロンプト表示時に展開する機能らしい。使ってないから、消すか。
