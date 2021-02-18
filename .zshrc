@@ -598,6 +598,9 @@ alias rbversions='rbenv versions'
 alias rbvs='rbenv versions'
 alias rc='rubocop'
 alias rca='rubocop -a'
+alias rd='rails db'
+alias rddp'rails db:drop'
+alias rddr'rails db:drop'
 alias rdbdrop='rails db:drop'
 alias rdbc='rails db:create'
 alias rdbm='rails db:migrate'
@@ -765,6 +768,9 @@ alias until='until'
 # $`%{\e[38;5;251m%}` :色の始まりかな。
 # vcs_info_msg_0_ : current branch
 
+
+
+
 #### zsh の右プロンプトを2行にする - Qiita
 #### https://qiita.com/eexiech8aNahShee/items/355cd4d884ce03656285
 ## 右プロンプトを2行にしてないけど、ブランチの取得方法で、参考にした?
@@ -772,14 +778,24 @@ alias until='until'
 
 ## [Git \- ZshでGitを使う](https://git-scm.com/book/ja/v2/Appendix-A%3A-%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEGit-Zsh%E3%81%A7Git%E3%82%92%E4%BD%BF%E3%81%86)
 
+# [zshのターミナルにリポジトリの情報を表示してみる · けんごのお屋敷](http://tkengo.github.io/blog/2013/05/12/zsh-vcs-info/)
+
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:git:*' formats '%b'
-zstyle ':vcs_info:*' actionformats '%b(%a)'
+# zstyle ':vcs_info:git:*' formats '%b'
+# zstyle ':vcs_info:*' actionformats '%b(%a)'
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
 vcs_info
+setopt prompt_subst
+
 PROMPT=$'\n%F{080}%~\n$ %f'
-RPROMPT="%F{blue}${vcs_info_msg_0_}%f"
+# RPROMPT="%F{blue}${vcs_info_msg_0_}%f"
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
 # vcs Version Control Systems?
 # $'' …… ダブルクォートで囲むと改行「\n」が反映されなかった。
@@ -789,3 +805,5 @@ RPROMPT="%F{blue}${vcs_info_msg_0_}%f"
 # zstyle ':vcs_info:git:*' とgitを指定することで、gitというバージョン管理システムでのみ適用される。しかし、git以外のバージョン管理システムを使うことはないような気がするし、指定する必要もない気がする。
 
 #### setopt prompt_subst #…… $()埋め込みの変数をプロンプト表示時に展開する機能らしい。使ってないから、消すか。
+
+## [vcs_info の使い方 あるいは prompt_subst のススメ - s9g](https://s9g.hatenadiary.org/entry/20100504/vcs_info)
