@@ -278,6 +278,7 @@ alias gbran='git branch'
 alias gbranc='git branch'
 alias gbranch='git branch'
 alias gc='git commit'
+alias gc='git commit --verbose'
 alias gca='git commit --amend'
 alias gcm='git commit'
 alias gcmm='git commit -m'
@@ -445,6 +446,7 @@ alias gpsho='git push origin'
 alias gpshori='git push origin'
 alias gpshfo='git push -f origin'
 alias gpshfori='git push -f origin'
+# alias gpsoh='git push origin HEAD'
 alias gpus='git push'
 alias gpusf='git push -f'
 alias gpush='git push'
@@ -790,12 +792,14 @@ zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
-vcs_info
+
 setopt prompt_subst
 
+vcs_info
 PROMPT=$'\n%F{080}%~\n$ %f'
 # RPROMPT="%F{blue}${vcs_info_msg_0_}%f"
-RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+# RPROMPT=$RPROMPT'${vcs_info_msg_0_}' # source ~/dotfile/.zshのたびに、ブランチが追加されてしまい。
+RPROMPT='${vcs_info_msg_0_}'
 
 # vcs Version Control Systems?
 # $'' …… ダブルクォートで囲むと改行「\n」が反映されなかった。

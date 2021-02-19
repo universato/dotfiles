@@ -178,6 +178,7 @@
 	pullo = pull origin
 	pullom = pull origin main
 	pullorim = pull origin main
+	psoh = push origin HEAD
 	pus = push
 	pusf = push -f
 	pushf = push -f
