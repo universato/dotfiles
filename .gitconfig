@@ -67,6 +67,8 @@
 	comai = checkout main
 	comas = checkout master
 	comi = checkout main
+	comm = commit
+	commi = commit
 	commti = commit
 	comn = checkout main
 	coms = checkout ms

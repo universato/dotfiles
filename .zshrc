@@ -1,4 +1,18 @@
-export NVM_DIR="$HOME/.nvm"
+# for rbenv
+export PATH="~/.rbenv/shims:/usr/local/bin:$PATH"
+eval "$(rbenv init -)"
+# echo "$(rbenv init - zsh)" と書くと、zsh用の補完機能が働くらしい。古い情報かも。なくても普通に補完されるような。
+
+# uniq
+typeset -U PATH
+# echo $PATH | tr ':' '\n'
+
+# Terminal # ~/zprofile
+# if [ -f ~/.bashrc ]; then
+
+# $HOME より ~ の方がわかりやすい気がする。
+# export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 
 # PS1 : Prompt
@@ -86,9 +100,10 @@ fpath=(~/.zsh $fpath)
 # https://qiita.com/benzene/items/865506483377ad4128ee
 # $fpathの重複を削除する。
 typeset -U FPATH
-echo FPATH
-echo $FPATH | tr ':' '\n'
-echo ''
+
+# echo FPATH
+# echo $FPATH | tr ':' '\n'
+# echo ''
 
 # 以下のコードは過剰?
 # fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
@@ -147,6 +162,10 @@ alias b='git branch'
 alias bc='./bin/console'
 alias bd='git branch -d'
 alias be='bundle exec'
+alias ber='bundle exec ruby'
+alias berb='bundle exec ruby'
+alias berub='bundle exec ruby'
+alias beruby='bundle exec ruby'
 alias bi='bundle install'
 alias bincon='./bin/console'
 alias binconsole='./bin/console'
@@ -157,6 +176,12 @@ alias blam='git blame'
 alias blame='git blame'
 alias bni='bundle install'
 alias bo='bundle outdated'
+alias bp='bundle pristine'
+alias bpn='bundle exec gem pristine --all --no-extension'
+alias bpr='bundle pristine'
+alias bpris='bundle pristine'
+alias bpristine='bundle pristine'
+alias bpristine='bundle pristine'
 # alias br='brew'
 alias br='git branch'
 alias bra='git branch'
@@ -210,8 +235,16 @@ alias com='git checkout main'
 alias coma='git checkout main'
 alias comai='git checkout main'
 alias comain='git checkout main'
+alias commi='git commit'
+alias commit='git commit'
 alias con='./bin/console'
 alias cpi='cp -i'
+alias cr='crystal'
+alias cry='crystal'
+# alias crys='crystal'
+# alias cryst='crystal'
+# alias crysta='crystal'
+alias crystal='crystal'
 alias cs='code ~/Library/"Application Support"/Code/User/snippets'
 alias csn='code ~/Library/"Application Support"/Code/User/snippets'
 alias csni='code ~/Library/"Application Support"/Code/User/snippets'
@@ -506,6 +539,9 @@ alias index='git add'
 
 alias k='kill -9'
 alias k9='kill -9'
+alias kr='k9 $(head -n 1 ./tmp/pids/server.pid)'
+alias krails='k9 $(head -n 1 ./tmp/pids/server.pid)'
+alias k9r='k9 $(head -n 1 ./tmp/pids/server.pid)'
 
 alias l='ls'
 alias la='ls -A'
@@ -600,6 +636,9 @@ alias rbversions='rbenv versions'
 alias rbvs='rbenv versions'
 alias rc='rubocop'
 alias rca='rubocop -a'
+alias rcac='rails dev:cache'
+alias rcach='rails dev:cache'
+alias rcache='rails dev:cache'
 alias rd='rails db'
 alias rddp'rails db:drop'
 alias rddr'rails db:drop'
@@ -609,13 +648,27 @@ alias rdbm='rails db:migrate'
 alias rdbs='rails db:seed'
 alias rddrop='rails db:drop'
 alias rdc='rails db:create'
+alias rdca='rails dev:cache'
+alias rdcac='rails dev:cache'
+alias rdcach='rails dev:cache'
+alias rdcache='rails dev:cache'
+alias rdcr='rails db:create'
+alias rdcre='rails db:create'
+alias rdcrea='rails db:create'
+alias rdcreat='rails db:create'
+alias rdcreate='rails db:create'
 alias rdm='rails db:migrate'
 alias rdr='rails db:reset'
+alias rdre='rails db:reset'
+alias rdres='rails db:reset'
+alias rdrese='rails db:reset'
+alias rdreset='rails db:reset'
 alias rds='rails db:seed'
 # alias rg='rails g'
 alias rg='rg'
 alias rgc='rails g controller'
 alias rgm='rails g model'
+alias rgs='rails g scaffold'
 alias rl18='rbenv local 1.8.6'
 alias rl25='rbenv local 2.5.8'
 alias rl26='rbenv local 2.6.6'
@@ -624,6 +677,10 @@ alias rl271='rbenv local 2.7.1'
 alias rbenv271='rbenv local 2.7.1'
 alias rm='rm'
 alias rmi='rm -i'
+alias rn='rails notes'
+alias rna='rails notes --annotations'
+alias rnafn='rails notes --annotations FIXME NOTE'
+alias rnanf='rails notes --annotations FIXME NOTE'
 alias robocop='rubocop'
 alias ro='rails routes'
 alias rou='rails routes'
@@ -639,6 +696,8 @@ alias rubo='rubocop'
 alias ruboc='rubocop'
 alias rubycop='rubocop'
 alias ruc='rubocop'
+alias rv='rbenv versions'
+alias rversions='rbenv versions'
 alias rwc='rails webpacker:compile'
 
 alias s='git status'
@@ -769,8 +828,6 @@ alias until='until'
 
 # $`%{\e[38;5;251m%}` :色の始まりかな。
 # vcs_info_msg_0_ : current branch
-
-
 
 
 #### zsh の右プロンプトを2行にする - Qiita
