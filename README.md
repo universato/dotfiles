@@ -10,6 +10,12 @@
 
 ## 作成方法
 
+```sh
+cd ~
+mv .gemrc dotfiles
+```
+
+
 VS Code
 ```zsh
 cd ~/Library/Application Support/Code/User

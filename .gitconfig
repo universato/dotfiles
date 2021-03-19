@@ -125,6 +125,7 @@
 	fech = fetch
 	fetch = fetch
 	fpush = push -f
+	fwl = push --force-with-lease
 	g = log --graph
 	go = log --graph --oneline
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
@@ -166,6 +167,7 @@
 	plorim = pull origin main
 	plorimain = pull origin main
 	pll = pull
+	poh = pull origin HEAD
 	pom = pull origin main
 	ps = push
 	psf = push -f
