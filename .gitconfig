@@ -198,6 +198,8 @@
 	rebai = rebase -i
 	rebi = rebase -i
 	reh = reset --hard
+	remo = remote
+	remot = remote
 	res = reset --soft
 	reseth = reset --hard
 	resethd = reset --hard
@@ -210,6 +212,7 @@
 	rh = reset --hard
 	ri = rebase -i
 	rm = rm
+	rmt = remote
 	rp = remote prune
 	rpo = remote prune origin
 	rs = reset --soft
