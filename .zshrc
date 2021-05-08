@@ -162,6 +162,7 @@ alias b='git branch'
 alias bc='./bin/console'
 alias bd='git branch -d'
 alias be='bundle exec'
+alias bebh='bundle exec bitclust htmlfile'
 alias ber='bundle exec ruby'
 alias beras='bundle exec rails s'
 alias berb='bundle exec ruby'
@@ -169,6 +170,7 @@ alias bers='bundle exec rails s'
 alias beru='bundle exec ruby'
 alias berub='bundle exec ruby'
 alias beruby='bundle exec ruby'
+alias bh='bitclust htmlfile'
 alias bi='bundle install'
 alias bip='bundle install --path vendor/bundle'
 alias bipv='bundle install --path vendor/bundle'
@@ -229,6 +231,7 @@ alias cdh='cd ~'
 alias ch='cd ~'
 alias chp='git cherry-pick'
 alias cp='cp'
+alias cpi="cp -i"
 alias ci='git commit'
 alias cl='clear'
 alias cle='clear'
@@ -244,8 +247,8 @@ alias cmam='git commit --amend'
 alias cmad='git commit --amend'
 alias cme='git commit --allow-empty'
 alias cmem='git commit --allow-empty -m'
-# alias co='git checkout' # switch使えば必要ないのでは。
-alias co='code'
+alias co='git checkout' # switch使えば必要ないのでは。
+# alias co='code' # codeはcでよく使うので、coはgit checkoutに割り当てる。
 alias co.='code .'
 alias co.='code ..'
 alias coc='code' # for spell miss
@@ -621,8 +624,11 @@ alias makedir='mkdir'
 alias md='mkdir'
 alias mdp='mkdir -p'
 alias mp='mkdir -p'
+alias mr='miniruby'
+alias mrb='miniruby'
 alias ms='rails db:migrate:status'
 alias mstatus='rails db:migrate:status'
+alias mv='mv'
 alias mvi='mv -i'
 
 # alias n='git checkout -b'
@@ -755,6 +761,7 @@ alias rl27='rbenv local 2.7.1'
 alias rl271='rbenv local 2.7.1'
 alias rbenv271='rbenv local 2.7.1'
 alias rm='rm -v'
+alias rmvi='rm -iv'
 alias rmi='rm -vi'
 alias rn='rails notes'
 alias rna='rails notes --annotations'
@@ -776,6 +783,8 @@ alias rrh='rails routes --help'
 alias rrb='rails db:rollback'
 alias rrs='rails db:reset'
 alias rt='rails test'
+alias rtask='rake --tasks'
+alias rtasks='rake --tasks'
 alias ru='ruby'
 alias rub='ruby'
 alias rubo='rubocop'
@@ -805,6 +814,7 @@ alias swm='git switch main'
 alias swich='git switch'
 
 alias t='date +"%m/%d(%a) %H:%M:%S"'
+alias tasks='rake --tasks'
 alias then='then' # `then` is a keyword for shell
 alias time='time'
 
@@ -969,3 +979,14 @@ RPROMPT='${vcs_info_msg_0_}'
 # For pkg-config to find sqlite you may need to set:
 #   export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
+# export PATH="$PATH:$HOME/oss/bitclust/bin" # ダメだった
+# export PATH="$PATH:$HOME/bin"
+
+
+
+# https://twitter.com/mattn_jp/status/1379974465354788865
+# alias rm="rm -i"
+# alias mv="mv -i"
+# alias cp="cp -i"
+
+export AC_LIBRARY_PATH="Users/uni/rubybook/ac-library-rb"

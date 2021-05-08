@@ -1,14 +1,14 @@
 {
   "consolo.log": {
     "prefix": "conlog",
-    "body": "console.log('$1')",
+    "body": "console.log('$1')"
   },
   "console.log2": {
     "prefix": "consol.log",
-    "body": "console.log('$1')",
+    "body": "console.log('$1')"
   },
   "log": {
     "prefix": "log",
-    "body": "console.log('$1')",
+    "body": "console.log('$1')"
   }
 }

@@ -11,6 +11,7 @@
     "gitlens.defaultDateFormat": "YYYY/MM/DD HH:mm",
     "gitlens.defaultDateShortFormat": "YYYY/MM/DD",
     "hamlLint.useBundler": true,
+    "indentRainbow.errorColor": "rgba(128, 32, 32, 0.1)",
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
@@ -18,6 +19,7 @@
     "ruby.useLanguageServer": true,
     "solargraph.definitions": true,
     "solargraph.diagnostics": true,
+    "terminal.integrated.shell.osx": "/bin/zsh",
     "yaml.schemas": {
         "http://json.schemastore.org/circleciconfig": "/.circleci/config.yml"
     },
@@ -26,17 +28,47 @@
         "**/settings.json": {
             "short snippet": {
                 "prefix": "ss",
-                "body": ["\"$1\": {", "\t\"prefix\": \"$2\",", "\t\"body\": \"$3\",", "},"],
+                "body": ["\"$1\": {", "\t\"prefix\": \"$2\",", "\t\"body\": \"$3\",", "},"]
+            }
+        },
+        "**/app/controllers/*.rb": {
+            "ApplicationController": {
+                "prefix": "ApplicationController",
+                "body": "ApplicationController"
+            },
+            "def index": {
+                "prefix": "def index",
+                "body": [
+                    "def index",
+                    "  $1",
+                    "end"
+                ]
+            },
+            "def update": {
+                "prefix": "def update",
+                "body": [
+                    "def update",
+                    "  $1",
+                    "end"
+                ]
+            }
+        },
+        "**/app/views/*.erb": {
+            "link_to": {
+                "prefix": "link_to",
+                "body": [
+                    "link_to"
+                ]
             }
         },
         "**/db/migrate/*.rb": {
             "add_column": {
                 "prefix": "add_column",
-                "body": ["add_column :${1:table_name}, :${2:column_name}, :${3:type}${4, :null: false}"],
+                "body": ["add_column :${1:table_name}, :${2:column_name}, :${3:type}${4, :null: false}"]
             },
             "add_index": {
                 "prefix": "add_index",
-                "body": ["add_index :${1:table_name}, :${2:column_name}"],
+                "body": ["add_index :${1:table_name}, :${2:column_name}"]
             },
             "change_method": {
                 "prefix": "change",
@@ -44,7 +76,7 @@
                     "def chnge",
                     "  add_column :${1:table_name}, :${2:column_name}, :${3:type}${4, :null: false}",
                     "end"
-                ],
+                ]
             },
             "remove_index": {
                 "prefix": "remove_index",
@@ -52,38 +84,38 @@
             },
             "not null": {
                 "prefix": "null",
-                "body": "null: false",
+                "body": "null: false"
             },
             "unique true": {
                 "prefix": "unique",
-                "body": "unique: true",
-            },
+                "body": "unique: true"
+            }
         },
         "**/Gemfile": {
             "gems": {
                 "prefix": "gems",
-                "body": "gem '$1'",
+                "body": "gem '$1'"
             },
             "gemd": {
                 "prefix": "gemd",
-                "body": "gem \"$1\"",
+                "body": "gem \"$1\""
             },
             "image_processing": {
                 "prefix": "image_processing",
-                "body": "image_processing",
+                "body": "image_processing"
             },
             "kaminari": {
                 "prefix": "kaminari",
-                "body": "kaminari",
+                "body": "kaminari"
             },
             "sass-rails": {
                 "prefix": "sass-rails",
-                "body": "sass-rails",
+                "body": "sass-rails"
             },
             "slack-notifier": {
                 "prefix": "slack-notifier",
-                "body": "slack-notifier",
-            },
-        },
-    },
+                "body": "slack-notifier"
+            }
+        }
+    }
 }

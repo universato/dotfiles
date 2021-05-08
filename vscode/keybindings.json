@@ -43,7 +43,7 @@
   {
     "key": "cmd+y",
     "command": "redo",
-    "when": "editorTextFocus",
+    "when": "editorTextFocus"
   },
   // {
   //   "key": "shift+backspace",
@@ -94,5 +94,5 @@
     "key": "ctrl+delete",
     "command": "-deleteRight",
     "when": "textInputFocus"
-  },
+  }
 ]
