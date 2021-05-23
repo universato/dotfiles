@@ -1,4 +1,14 @@
 {
+  "<details>": {
+    "prefix": "<details>",
+    "body": [
+      "<details>",
+      "  <summary>$1</summary>",
+      "  $2",
+      "</details>"
+    ],
+    "description": "details"
+  },
   "index.html": {
     "prefix": "index",
     "body": [

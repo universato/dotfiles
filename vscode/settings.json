@@ -5,6 +5,11 @@
     // "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
+    "files.associations":
+    {
+        // "*.gemspec": "gemspec",
+        // "Gemfile": "Gemfile",
+    },
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
@@ -15,7 +20,14 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false,
+        "editor.renderWhitespace": "boundary"
+    },
     "ruby.intellisense": "rubyLocate",
+    "ruby.lint": {
+        "rubocop": false
+    },
     "ruby.useLanguageServer": true,
     "solargraph.definitions": true,
     "solargraph.diagnostics": true,
@@ -29,6 +41,12 @@
             "short snippet": {
                 "prefix": "ss",
                 "body": ["\"$1\": {", "\t\"prefix\": \"$2\",", "\t\"body\": \"$3\",", "},"]
+            }
+        },
+        "**/*_test.rb": {
+            "assert_equal": {
+                "prefix": "assert_equal",
+                "body": "assert_equal"
             }
         },
         "**/app/controllers/*.rb": {
@@ -116,6 +134,29 @@
                 "prefix": "slack-notifier",
                 "body": "slack-notifier"
             }
+        },
+        "**/*.gemspec": {
+            "add_dependency": {
+                "prefix": "add_dependency",
+            },
+            "add_development_dependency": {
+                  "prefix": "add_development_dependency",
+                  "body": "add_development_dependency $1"
+            }
+        },
+        "**/.rubocop.yml": {
+            "Enabed: false": {
+                "prefix": "Enabed: false",
+                "body": "Enabed: false"
+            },
+            "Exclude:": {
+                "prefix": "Exclude",
+                "body": [
+                    "Exclude:",
+                    "  - '$1'"
+                ]
+            }
         }
-    }
+    },
+    "window.zoomLevel": -1
 }

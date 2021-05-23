@@ -1,10 +1,10 @@
 {
   "Array.new(n){": {
-    "prefix": "Array.new(n){",
+    "prefix": "Array",
     "body": "Array.new(n){ $1 }"
   },
-  "Array.new(n){ gets.to_s.splir.map{ |e| e.to_i } }": {
-    "prefix": "Array.new(n){ gets.to_s.split.map{ |e| e.to_i } }",
+  "Array.new(n){ gets.to_s.split.map{ |e| e.to_i } }": {
+    "prefix": "Array",
     "body": "Array.new(n){ gets.to_s.split.map{ |e| e.to_i } }"
   },
   "assert_equal": {
@@ -72,6 +72,14 @@
       "end"
     ]
   },
+  "def - singular method difinition": {
+    "prefix": "def",
+    "body": [
+      "def self.$1",
+      "  $2",
+      "end"
+    ]
+  },
   "def cumsum": {
     "prefix": "def cumsum",
     "body": [
@@ -81,14 +89,6 @@
       "end"
     ],
     "description": "Array#cumsum"
-  },
-  "def foo": {
-    "prefix": "def foo",
-    "body": [
-      "def foo",
-      "  $1",
-      "end"
-    ]
   },
   "else": {
     "prefix": "else",
@@ -129,6 +129,14 @@
   "initialize_method": {
     "prefix": "def initialize",
     "body": ["def initialize", "  $1", "end"]
+  },
+  "instance_methods(false).sort": {
+    "prefix": "instance_methods",
+    "body": "instance_methods(false).sort"
+  },
+  "is_a?": {
+    "prefix": "is_a?",
+    "body": "is_a?($1)"
   },
   "minitest": {
     "prefix": "minitest",

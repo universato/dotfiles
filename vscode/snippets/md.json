@@ -1,0 +1,22 @@
+{
+  "<details>": {
+    "prefix": "<details>",
+    "body": [
+      "<details>",
+      "  <summary>$1</summary>",
+      "  $2",
+      "</details>"
+    ],
+    "description": "details"
+  },
+  "table": {
+    "prefix": "table",
+    "body": [
+      "|$1  |    |    |",
+      "|:---|:---|:---|",
+      "|    |    |    |",
+      "|    |    |    |"
+    ],
+    "description": "details"
+  }
+}

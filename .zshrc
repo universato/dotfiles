@@ -504,6 +504,7 @@ alias gplomas='git pull origin master'
 alias gpoh='git push origin HEAD'
 alias gpsh='git push'
 alias gpshf='git push -f'
+alias gphm='git push heroku main'
 alias gpsho='git push origin'
 alias gpshori='git push origin'
 alias gpshfo='git push -f origin'
@@ -673,7 +674,8 @@ alias plo='git pull origin'
 alias ploms='git pull origin master'
 alias poh='git push origin HEAD'
 alias pso='git push origin'
-alias ps='git push'
+# alias ps='git push'
+alias ps='ps' # for process
 alias psh='git push'
 alias psoms='git push origin master'
 alias pull='git pull'
@@ -684,6 +686,7 @@ alias r='rails'
 alias ra='rails'
 alias rac='rails console'
 alias rag='rails generate'
+alias rakr='rake' # for typo
 alias rapn='rails plugin'
 alias rapn='rails plugin new'
 alias ras='rails server'
@@ -840,7 +843,12 @@ alias vscode='code'
 alias vscode.='code.'
 alias vz='vim ~/dotfiles/.zshrc'
 
+alias wc='wc'
+alias wds='bin/webpack-dev-server'
+alias webpack-dev-server='bin/webpack-dev-server'
 alias while='while' # `while` is a keyword for shell
+alias ws='bin/webpack-dev-server'
+alias wserver='bin/webpack-dev-server'
 
 alias y='yarn'
 alias ya='yarn'
@@ -979,8 +987,7 @@ RPROMPT='${vcs_info_msg_0_}'
 # For pkg-config to find sqlite you may need to set:
 #   export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
-# export PATH="$PATH:$HOME/oss/bitclust/bin" # ダメだった
-# export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/bin"
 
 
 
