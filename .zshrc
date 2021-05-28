@@ -265,12 +265,14 @@ alias commi='git commit'
 alias commit='git commit'
 alias con='./bin/console'
 alias cpi='cp -i'
-alias cr='crystal'
-alias cry='crystal'
+# alias cr='crystal'
+# alias cry='crystal'
 # alias crys='crystal'
 # alias cryst='crystal'
 # alias crysta='crystal'
-alias crystal='crystal'
+# alias crystal='crystal'
+# alias crystal='$HOME/.asdf/installs/crystal/0.33.0/bin/crystal'
+# alias crystal='$HOME/.asdf/installs/crystal/1.0.0/bin/crystal'
 alias cs='code ~/Library/"Application Support"/Code/User/snippets'
 alias csn='code ~/Library/"Application Support"/Code/User/snippets'
 alias csni='code ~/Library/"Application Support"/Code/User/snippets'
@@ -990,10 +992,17 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="$PATH:$HOME/bin"
 
 
-
 # https://twitter.com/mattn_jp/status/1379974465354788865
 # alias rm="rm -i"
 # alias mv="mv -i"
 # alias cp="cp -i"
 
-export AC_LIBRARY_PATH="Users/uni/rubybook/ac-library-rb"
+export AC_LIBRARY_PATH="${HOME}/rubybook/ac-library-rb"
+
+# . $HOME/.asdf/asdf.sh
+export PATH="$PATH:$HOME/.asdf/shims"
+# CRYSTAL_CACHE_DIR=${HOME}/.cache/crystal
+# export CRYSTAL_PATH=lib:${HOME}/.asdf/installs/crystal/0.33.0/src
+# CRYSTAL_VERSION=1.0.0
+# CRYSTAL_LIBRARY_PATH=${HOME}/.asdf/installs/crystal/0.33.0/embedded/lib:${HOME}/.asdf/installs/crystal/1.0.0/embedded/lib
+# CRYSTAL_OPTS=''
