@@ -53,29 +53,19 @@
             "ApplicationController": {
                 "prefix": "ApplicationController",
                 "body": "ApplicationController"
-            },
-            "def index": {
-                "prefix": "def index",
-                "body": [
-                    "def index",
-                    "  $1",
-                    "end"
-                ]
-            },
-            "def update": {
-                "prefix": "def update",
-                "body": [
-                    "def update",
-                    "  $1",
-                    "end"
-                ]
             }
         },
-        "**/app/views/*.erb": {
+        "**/app/views/**/*.erb": {
             "link_to": {
                 "prefix": "link_to",
                 "body": [
                     "link_to"
+                ]
+            },
+            "link_to(simple)": {
+                "prefix": "link_to",
+                "body": [
+                    "link_to \"${1:HOME}\", ${2:root_path}$3"
                 ]
             }
         },

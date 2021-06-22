@@ -1,0 +1,9 @@
+{
+	"Print to console": {
+		"prefix": "v-model.number",
+		"body": [
+			"v-model.number"
+		],
+		"description": ""
+	}
+}

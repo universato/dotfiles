@@ -3,6 +3,13 @@ export PATH="~/.rbenv/shims:/usr/local/bin:$PATH"
 eval "$(rbenv init -)"
 # echo "$(rbenv init - zsh)" と書くと、zsh用の補完機能が働くらしい。古い情報かも。なくても普通に補完されるような。
 
+# rbenvがaliasに登録されてると次のようなエラーがでる。unalias rbenv。
+# $ eval "$(rbenv init -)"
+# zsh: defining function based on alias `rbenv'
+# zsh: parse error near `()'
+# $ which rbenv
+# rbenv: aliased to rbenv
+
 # uniq
 typeset -U PATH
 # echo $PATH | tr ':' '\n'
@@ -10,10 +17,10 @@ typeset -U PATH
 # Terminal # ~/zprofile
 # if [ -f ~/.bashrc ]; then
 
-# $HOME より ~ の方がわかりやすい気がする。
+## NVM_DIRに、管理してるNode.js等がある。
+## nvm か nodebrew が有名なバージョン管理ツール。asdf
 # export NVM_DIR="$HOME/.nvm"
-export NVM_DIR="~/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 
 # PS1 : Prompt
 # %n : name(user name)
@@ -130,9 +137,9 @@ compinit -u
 # > つまり、これがないとあなたが適当に作ったalias が干渉して、関数の動作が変わってしまう危険があるので、それを回避するために使うのです。
 
 # 重複を削除する。
-typeset -U precmd_functions
-echo $precmd_functions
-echo ''
+# typeset -U precmd_functions
+# echo $precmd_functions # _z_precmd precmd_vcs_info
+# echo ''
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -163,6 +170,7 @@ alias bc='./bin/console'
 alias bd='git branch -d'
 alias be='bundle exec'
 alias bebh='bundle exec bitclust htmlfile'
+alias bebs='bundle exec bitclust statichtml --outputdir=/tmp/rurema'
 alias ber='bundle exec ruby'
 alias beras='bundle exec rails s'
 alias berb='bundle exec ruby'
@@ -216,6 +224,7 @@ alias bup='bundle pristine'
 alias buu='bundle update'
 alias bwp='bundle install --without production'
 alias bx='bundle exec'
+alias bw='./bin/webpack-dev-server'
 
 alias c='clear'
 # alias c='code'
@@ -576,6 +585,7 @@ alias home='cd ~'
 alias hr='heroku'
 # alias hr='heroku rename'
 alias hro='heroku open'
+
 alias hero='heroku'
 alias herok='heroku'
 alias heroku='heroku'
@@ -588,6 +598,7 @@ alias hrdbmg='heroku run rails db:migrate'
 alias hrrdm='heroku run rails db:migrate'
 alias hrrdmg='heroku run rails db:migrate'
 alias hrrdbmg='heroku run rails db:migrate'
+alias ht='HEADED=1 rails test:all'
 
 alias if='if' # if is keyword of shell script
 alias in='git add'
@@ -707,6 +718,7 @@ alias rbg='rbenv global'
 alias rbg27='rbenv global 2.7.1'
 alias rbg3='rbenv global 3.0.0'
 alias rbg30='rbenv global 3.0.0'
+# alias rbl='rbenv local'
 alias rbv='rbenv versions'
 alias rbversions='rbenv versions'
 alias rbvs='rbenv versions'
@@ -834,14 +846,13 @@ alias until='until' # `until` is a keyword for shell
 alias us='git restore --staged'
 alias ust='git restore --staged'
 
-alias v='vim'
+# alias v='vim'
 # alias v='code'
 alias vag='vagrant'
 alias vagrant='vagrant up'
-alias v='vim'
-alias vs='code'
+alias vs='(){z $1 && code . && cd -}'
 alias vs.='code.'
-alias vscode='code'
+alias vscode='(){z $1 && code . && cd -}'
 alias vscode.='code.'
 alias vz='vim ~/dotfiles/.zshrc'
 
@@ -999,10 +1010,8 @@ export PATH="$PATH:$HOME/bin"
 
 export AC_LIBRARY_PATH="${HOME}/rubybook/ac-library-rb"
 
-# . $HOME/.asdf/asdf.sh
-export PATH="$PATH:$HOME/.asdf/shims"
-# CRYSTAL_CACHE_DIR=${HOME}/.cache/crystal
-# export CRYSTAL_PATH=lib:${HOME}/.asdf/installs/crystal/0.33.0/src
-# CRYSTAL_VERSION=1.0.0
-# CRYSTAL_LIBRARY_PATH=${HOME}/.asdf/installs/crystal/0.33.0/embedded/lib:${HOME}/.asdf/installs/crystal/1.0.0/embedded/lib
-# CRYSTAL_OPTS=''
+# export PATH="$PATH:$HOME/.asdf/shims"
+# asdf
+. /usr/local/opt/asdf/asdf.sh
+
+export PATH="/usr/local/sbin:$PATH"

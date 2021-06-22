@@ -102,6 +102,14 @@
     "prefix": "environment",
     "body": "environment"
   },
+  "Float::NAN": {
+    "prefix": "Float::NAN",
+    "body": "Float::NAN"
+  },
+  "Float::INFINITY": {
+    "prefix": "Float::INFINITY",
+    "body": "Float::INFINITY"
+  },
   "frozen_string_literal": {
     "prefix": "frozen_string_literal",
     "body": "# frozen_string_literal: true"
