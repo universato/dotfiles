@@ -1,5 +1,5 @@
 # for rbenv
-export PATH="~/.rbenv/shims:/usr/local/bin:$PATH"
+export PATH="${HOME}/.rbenv/shims:/usr/local/bin:$PATH"
 eval "$(rbenv init -)"
 # echo "$(rbenv init - zsh)" と書くと、zsh用の補完機能が働くらしい。古い情報かも。なくても普通に補完されるような。
 
@@ -214,6 +214,7 @@ alias brewi='brew install'
 alias bri='brew install'
 alias bt="bin/test"
 alias bu='bundle update'
+alias budnle='bundle' # for typo
 alias bundlei='bundle install'
 alias bundleini='bundle init'
 alias bundleinit='bundle init'
@@ -273,6 +274,7 @@ alias comain='git checkout main'
 alias commi='git commit'
 alias commit='git commit'
 alias con='./bin/console'
+alias cov='open ./coverage/index.html' # for SimpleCov
 alias cpi='cp -i'
 # alias cr='crystal'
 # alias cry='crystal'
@@ -335,6 +337,9 @@ alias finder='open'
 alias fjord='cd ~/fjord'
 alias for='for' # `for` is a keyword for shell
 alias force='git push -f'
+alias furikaeri='git log --reverse --date=iso --since="1week" --pretty=format:"[%cr] %h: %s"'
+alias furikaeri='git log --reverse --date=iso --since="1week" --pretty=format:"[%cd] %h: %s"'
+# pretty=format
 
 alias g='git'
 alias ga='git add'
@@ -585,6 +590,7 @@ alias home='cd ~'
 alias hr='heroku'
 # alias hr='heroku rename'
 alias hro='heroku open'
+alias hurikaeri='git log --reverse --date=iso --since="1week" --pretty=format:"[%cr] %h: %s"'
 
 alias hero='heroku'
 alias herok='heroku'
@@ -637,6 +643,7 @@ alias m='mkdir'
 alias makedir='mkdir'
 alias md='mkdir'
 alias mdp='mkdir -p'
+alias mkcd='(){makdir $1 && cd $1}'
 alias mp='mkdir -p'
 alias mr='miniruby'
 alias mrb='miniruby'
@@ -656,7 +663,7 @@ alias nr='npm run'
 alias nrs='npm run serve'
 alias nrserve='npm run serve'
 alias np='npm'
-alias npm='npm'
+# alias npm='npm'
 alias nx='npx'
 alias nzp='npx zenn preview'
 
@@ -705,6 +712,9 @@ alias rapn='rails plugin new'
 alias ras='rails server'
 alias rat='rails test'
 alias rail='rails'
+alias railsta='rails test:all'
+alias railst:a='rails test:all'
+alias raisl='rails'
 alias rale='rake'
 alias rb='ruby'
 alias rb18='rbenv local 1.8.6'
@@ -800,6 +810,7 @@ alias rrh='rails routes --help'
 alias rrb='rails db:rollback'
 alias rrs='rails db:reset'
 alias rt='rails test'
+alias rta='rails test:all'
 alias rtask='rake --tasks'
 alias rtasks='rake --tasks'
 alias ru='ruby'
@@ -878,9 +889,13 @@ alias zp='npx zenn preview'
 alias zs='npx zenn preview'
 alias zshrc='cd ~/dotfiles/.zshrc'
 
+alias -s cr='crystal'
 alias -s html='open'
 alias -s js='node'
+alias -s py='python'
+alias -s py='python'
 alias -s rb='ruby'
+alias -s rs='rustc'
 
 # shell keywords
 alias do='do'
@@ -1015,3 +1030,18 @@ export AC_LIBRARY_PATH="${HOME}/rubybook/ac-library-rb"
 . /usr/local/opt/asdf/asdf.sh
 
 export PATH="/usr/local/sbin:$PATH"
+# export PATH="$PATH:${HOME}/node_modules/.bin"
+export PATH="$PATH:/usr/local/bin/" # For npm global install by homebrew
+
+# npm list -g
+# ${HOME}/.asdf/installs/nodejs/16.2.0/.npm/lib
+# ${HOME}/.asdf/installs/nodejs/16.2.0/.npm/lib/node_modules
+
+export PATH="$PATH:$(asdf where nodejs)/.npm/bin" # For npm command by asdf using global install
+export PATH="/usr/local/opt/bzip2/bin:$PATH"
+
+# uniq
+typeset -U PATH
+
+# debug
+# echo $PATH | tr ":" "\n"

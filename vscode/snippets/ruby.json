@@ -11,9 +11,9 @@
     "prefix": "assert_equal (User Script)",
     "body": "assert_equal ${1:expected}, ${2:actual}"
   },
-  "attr_accessor": { "prefix": "attr_accessor", "body": "attr_accessor: :$1" },
-  "attr_reader": { "prefix": "attr_reader", "body": "attr_reader: :$1" },
-  "attr_writer": { "prefix": "attr_writer", "body": "attr_writer: :$1" },
+  "attr_accessor": { "prefix": "attr_accessor", "body": "attr_accessor :$1" },
+  "attr_reader": { "prefix": "attr_reader", "body": "attr_reader :$1" },
+  "attr_writer": { "prefix": "attr_writer", "body": "attr_writer :$1" },
   "bm": {
     "prefix": "bm",
     "body": [
