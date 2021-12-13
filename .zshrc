@@ -219,6 +219,7 @@ alias bundlei='bundle install'
 alias bundleini='bundle init'
 alias bundleinit='bundle init'
 alias bundlep='bundle pristine'
+alias budnler='bundle'
 alias bundleu='bundle update'
 alias bui='bundle install'
 alias bup='bundle pristine'
@@ -277,6 +278,7 @@ alias con='./bin/console'
 alias cov='open ./coverage/index.html' # for SimpleCov
 alias cpi='cp -i'
 # alias cr='crystal'
+alias credentials='EDITOR="vim" bin/rails credentials:edit'
 # alias cry='crystal'
 # alias crys='crystal'
 # alias cryst='crystal'
@@ -571,6 +573,8 @@ alias gswitchc='git switch -c'
 # alias h='cd ~' # home
 alias h='heroku'
 alias hc='heroku create'
+alias hcg='heroku config:get'
+alias hcs='heroku config:set'
 alias hcreate='heroku create'
 alias hdbmg='heroku run rails db:migrate'
 alias hdm='heroku run rails db:migrate'
@@ -607,6 +611,7 @@ alias hrrdbmg='heroku run rails db:migrate'
 alias ht='HEADED=1 rails test:all'
 
 alias if='if' # if is keyword of shell script
+alias ijs='osascript -l JavaScript -i'
 alias in='git add'
 alias ind='git add'
 alias index='git add'
@@ -668,6 +673,7 @@ alias nx='npx'
 alias nzp='npx zenn preview'
 
 alias o='open'
+alias om='heroku addons:open mailgun'
 alias op='open'
 alias ope='open'
 alias or='open http://localhost:3000/'
@@ -831,6 +837,8 @@ alias sou='source'
 alias sour='source'
 alias sourc='source'
 alias sp='spring'
+alias sps='spring stop'
+alias spst='spring stop'
 alias ss='git status -s'
 alias st='git status'
 alias std='git diff --stat'
@@ -859,8 +867,8 @@ alias ust='git restore --staged'
 
 # alias v='vim'
 # alias v='code'
-alias vag='vagrant'
-alias vagrant='vagrant up'
+; alias vag='vagrant'
+; alias vagrant='vagrant'
 alias vs='(){z $1 && code . && cd -}'
 alias vs.='code.'
 alias vscode='(){z $1 && code . && cd -}'
@@ -1039,6 +1047,10 @@ export PATH="$PATH:/usr/local/bin/" # For npm global install by homebrew
 
 export PATH="$PATH:$(asdf where nodejs)/.npm/bin" # For npm command by asdf using global install
 export PATH="/usr/local/opt/bzip2/bin:$PATH"
+
+# https://github.com/amberframework/amber/issues/1163
+# https://crystal-lang.org/install/on_mac_os/
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opt/openssl/lib/pkgconfig
 
 # uniq
 typeset -U PATH
