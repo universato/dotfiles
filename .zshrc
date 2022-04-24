@@ -306,6 +306,7 @@ alias dcac='git diff --cached'
 alias dcc='git diff --cached'
 alias df='cd ~/dotfiles'
 alias dic='open /System/Applications/Dictionary.app' # cmd + space -> 'dic'
+alias dit='git'
 alias ds='diff --st'
 alias do='do' # do is keyword
 # nvm.sh:114: parse error near `done' · Issue #987 · nvm-sh/nvm
@@ -1035,7 +1036,19 @@ export AC_LIBRARY_PATH="${HOME}/rubybook/ac-library-rb"
 
 # export PATH="$PATH:$HOME/.asdf/shims"
 # asdf
-. /usr/local/opt/asdf/asdf.sh
+# . /usr/local/opt/asdf/asdf.sh
+
+# 2022/4/24, これを入れないと0.9.0になる。
+export ASDF_DIR="/usr/local/Cellar/asdf/0.10.0/libexec"
+
+# 2022/4/24, asdfのバージョンアップで以下の文言がでた。
+# To use asdf, add the following line to your ~/.zshrc:
+. /usr/local/opt/asdf/libexec/asdf.sh
+# ↑
+# $ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
+# asdfの説明にも書いてあった。
+
+
 
 export PATH="/usr/local/sbin:$PATH"
 # export PATH="$PATH:${HOME}/node_modules/.bin"
@@ -1045,12 +1058,16 @@ export PATH="$PATH:/usr/local/bin/" # For npm global install by homebrew
 # ${HOME}/.asdf/installs/nodejs/16.2.0/.npm/lib
 # ${HOME}/.asdf/installs/nodejs/16.2.0/.npm/lib/node_modules
 
-export PATH="$PATH:$(asdf where nodejs)/.npm/bin" # For npm command by asdf using global install
+# Unknown command: `asdf where nodejs`ってでた。2022/4/24
+# export PATH="$PATH:$(asdf where nodejs)/.npm/bin" # For npm command by asdf using global install
 export PATH="/usr/local/opt/bzip2/bin:$PATH"
 
 # https://github.com/amberframework/amber/issues/1163
 # https://crystal-lang.org/install/on_mac_os/
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opt/openssl/lib/pkgconfig
+
+# for pyenv
+export PATH="$HOME/.pyenv/shims:$PATH"
 
 # uniq
 typeset -U PATH
