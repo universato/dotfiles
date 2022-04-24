@@ -1035,18 +1035,13 @@ export PATH="$PATH:$HOME/bin"
 export AC_LIBRARY_PATH="${HOME}/rubybook/ac-library-rb"
 
 # export PATH="$PATH:$HOME/.asdf/shims"
-# asdf
-# . /usr/local/opt/asdf/asdf.sh
 
 # 2022/4/24, これを入れないと0.9.0になる。
 export ASDF_DIR="/usr/local/Cellar/asdf/0.10.0/libexec"
 
-# 2022/4/24, asdfのバージョンアップで以下の文言がでた。
-# To use asdf, add the following line to your ~/.zshrc:
 . /usr/local/opt/asdf/libexec/asdf.sh
 # ↑
 # $ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
-# asdfの説明にも書いてあった。
 
 
 
