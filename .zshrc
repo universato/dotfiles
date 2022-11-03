@@ -1,5 +1,5 @@
 # for rbenv
-export PATH="${HOME}/.rbenv/shims:/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 eval "$(rbenv init -)"
 # echo "$(rbenv init - zsh)" と書くと、zsh用の補完機能が働くらしい。古い情報かも。なくても普通に補完されるような。
 
@@ -9,6 +9,9 @@ eval "$(rbenv init -)"
 # zsh: parse error near `()'
 # $ which rbenv
 # rbenv: aliased to rbenv
+
+# rbenv initをやってると、~/.rbenv/shimsがPATHに登録される。
+#
 
 # uniq
 typeset -U PATH
@@ -235,10 +238,12 @@ alias c..='code ..'
 alias ca='cat'
 alias case='case' # `case` is a keyword for shell
 # alias cb='git checkout -b'
-alias cb='git switch -c'
+alias cb='git switch -c' # create branch?
+alias cbp='code ~/.bash_profile'
 alias cd='cd'
 alias cd..='cd ..'
 alias cdh='cd ~'
+alias cgie='code .git/info/exclude'
 alias ch='cd ~'
 alias chp='git cherry-pick'
 alias cp='cp'
@@ -279,6 +284,7 @@ alias cov='open ./coverage/index.html' # for SimpleCov
 alias cpi='cp -i'
 # alias cr='crystal'
 alias credentials='EDITOR="vim" bin/rails credentials:edit'
+alias create='git switch -c'
 # alias cry='crystal'
 # alias crys='crystal'
 # alias cryst='crystal'
@@ -330,6 +336,8 @@ alias ef='eslint --fix'
 alias elif='elif' # `elif` is a keyword for shell
 alias es='eslint --fix'
 alias esac='esac' # `esac` is a keyword for shell
+alias exc='code .git/info/exclude'
+alias exclude='code .git/info/exclude'
 
 alias f='open'
 alias fi='fi' # `fi` is keyword for shell
@@ -339,7 +347,7 @@ alias finde='open'
 alias finder='open'
 alias fjord='cd ~/fjord'
 alias for='for' # `for` is a keyword for shell
-alias force='git push -f'
+alias force='git push --force-with-lease'
 alias furikaeri='git log --reverse --date=iso --since="1week" --pretty=format:"[%cr] %h: %s"'
 alias furikaeri='git log --reverse --date=iso --since="1week" --pretty=format:"[%cd] %h: %s"'
 # pretty=format
@@ -360,6 +368,7 @@ alias gbranch='git branch'
 alias gc='git commit'
 alias gc='git commit --verbose'
 alias gca='git commit --amend'
+alias gci='code .git/info/exclude'
 alias gcm='git commit'
 alias gcmm='git commit -m'
 alias gcma='git commit --amend'
@@ -477,6 +486,7 @@ alias gitcmam='git commit --amend'
 alias gitcoa='git commit --amend'
 alias gitcommita='git commit --amend'
 alias gitcommitamend='git commit --amend'
+alias gitconfig='code .gitconfig'
 alias gitd='git diff'
 alias gitdc='git diff --cached'
 alias gitlocalname='git config user.name'
@@ -611,6 +621,7 @@ alias hrrdmg='heroku run rails db:migrate'
 alias hrrdbmg='heroku run rails db:migrate'
 alias ht='HEADED=1 rails test:all'
 
+alias ie='code .git/info/exclude'
 alias if='if' # if is keyword of shell script
 alias ijs='osascript -l JavaScript -i'
 alias in='git add'
@@ -659,7 +670,7 @@ alias mv='mv'
 alias mvi='mv -i'
 
 # alias n='git checkout -b'
-alias n='npm'
+alias n='n'
 alias nd='node'
 alias nj='node'
 alias nm='npm'
@@ -832,6 +843,7 @@ alias rversions='rbenv versions'
 alias rwc='rails webpacker:compile'
 
 alias s='git status'
+alias sbp='source ~/.bash_profile'
 alias sl='ln -s'
 alias sm='git switch main'
 alias so='source'
@@ -848,8 +860,10 @@ alias stat='stat'
 alias statd='git diff --stat'
 alias sz='source ~/.zshrc'
 alias sw='git switch'
+alias swd='git switch develop'
 alias swm='git switch main'
 alias swich='git switch'
+alias switch='git switch'
 
 alias t='date +"%m/%d(%a) %H:%M:%S"'
 alias tasks='rake --tasks'
@@ -1038,13 +1052,15 @@ export AC_LIBRARY_PATH="${HOME}/rubybook/ac-library-rb"
 # export PATH="$PATH:$HOME/.asdf/shims"
 
 # 2022/4/24, これを入れないと0.9.0になる。
-export ASDF_DIR="/usr/local/Cellar/asdf/0.10.0/libexec"
+# export ASDF_DIR="/usr/local/Cellar/asdf/0.10.0/libexec"
+export ASDF_DIR="/usr/local/opt/asdf/libexec"
 
 . /usr/local/opt/asdf/libexec/asdf.sh
 # ↑
 # $ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
 
-
+# echo ${ZDOTDIR:-~}
+# /Users/uni
 
 export PATH="/usr/local/sbin:$PATH"
 # export PATH="$PATH:${HOME}/node_modules/.bin"
@@ -1065,8 +1081,39 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opt/openssl/lib/pkgconfig
 # for pyenv
 export PATH="$HOME/.pyenv/shims:$PATH"
 
+# for jupiter-lab
+# juyter-labが止まって動かなくなったときに、追加した。2022。
+# [zsh: command not found: jupyter の対処法 | めがね先生の横道](https://megane-sensei.com/563/)
+# Finderで「JupyterLab.app」を探して、「情報を見る」で「場所: Machitosh HD・アプリケーション」と書かれている。
+# 実際、この場所をコピーすると、/Applicationsとなる。
+# しかし、which jupyterとすると、~/pyenv/shims/jupterだ。本当に意味があったのかな?
+# export PATH="/Applications:${PATH}"
+export PATH="${PATH}:/Applications"
+
+
+# export EDITOR=code
+export HOMEBREW_EDITOR=code
+# brewコマンドを使ったら、以下のように言われたので設定してみる。2022/10/26
+# Warning: Using code because no editor was set in the environment.
+# This may change in the future, so we recommend setting EDITOR,
+# or HOMEBREW_EDITOR to your preferred text editor.
+# 警告: エディタが環境に設定されていないので、codeを使用しています。
+# これは将来変更されるかもしれないので、あなたの好みのテキストエディタを
+# EDITORか HOMEBREW_EDITORに設定することをオススメします。
+# なんか別にこだわりないし、もっと先進的なエディタがでたら乗り換えるよ、たぶん。
+# そんな先進的なエディタがでるのか知らないし、VScodeで満足してるところあるけど。
+
+# https://github.com/RomainFranceschini/icrystal
+export PATH="${PATH}:${HOME}/oss/icrystal/bin"
+
+# git-user
+
 # uniq
 typeset -U PATH
 
-# debug
-# echo $PATH | tr ":" "\n"
+## for debug
+# echo $PATH | tr ":" "\n"ß
+
+# bison for 3.8.2 macOS
+# https://stackoverflow.com/questions/24835116/bison-latest-version-installed-but-not-in-use
+export PATH="/usr/local/opt/bison/bin:$PATH"
