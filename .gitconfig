@@ -27,6 +27,7 @@
 	ame = commit --amend
 	amen = commit --amend
 	amend = commit --amend
+	ammend = commit --amend
 	amnd = commit --amend
 	b = branch
 	bd = branch -d
@@ -124,7 +125,8 @@
 	fet = fetch
 	fech = fetch
 	fetch = fetch
-	fpush = push -f
+	force = push --force-with-lease
+	fpush = push --force-with-lease
 	fwl = push --force-with-lease
 	g = log --graph
 	go = log --graph --oneline
@@ -248,3 +250,5 @@
 	unst = restore --staged
 	unstage = restore --staged
 	us = restore --staged
+[url "https://"]
+	insteadOf = git://
