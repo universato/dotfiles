@@ -1,0 +1,23 @@
+alias dic='open /System/Applications/Dictionary.app' # cmd + space -> 'dic'
+
+# for jupiter-lab
+# juyter-labが止まって動かなくなったときに、追加した。2022。
+# [zsh: command not found: jupyter の対処法 | めがね先生の横道](https://megane-sensei.com/563/)
+# Finderで「JupyterLab.app」を探して、「情報を見る」で「場所: Machitosh HD・アプリケーション」と書かれている。
+# 実際、この場所をコピーすると、/Applicationsとなる。
+# しかし、which jupyterとすると、~/pyenv/shims/jupterだ。本当に意味があったのかな?
+# export PATH="/Applications:${PATH}"
+export PATH="${PATH}:/Applications"
+
+# export EDITOR=code
+export HOMEBREW_EDITOR=code
+# codeが、VSCodeを呼ぶコマンド。
+# brewコマンドを使ったら、以下のように言われたので設定してみる。2022/10/26
+#
+# Warning: Using code because no editor was set in the environment.
+# This may change in the future, so we recommend setting EDITOR,
+# or HOMEBREW_EDITOR to your preferred text editor.
+#
+# 警告: エディタが環境に設定されていないので、codeを使用しています。
+# これは将来変更されるかもしれないので、あなたの好みのテキストエディタを
+# EDITORか HOMEBREW_EDITORに設定することをオススメします。

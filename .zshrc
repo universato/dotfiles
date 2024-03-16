@@ -315,7 +315,7 @@ alias dc='dc'
 alias dcac='git diff --cached'
 alias dcc='git diff --cached'
 alias df='cd ~/dotfiles'
-alias dic='open /System/Applications/Dictionary.app' # cmd + space -> 'dic'
+# alias dic='open /System/Applications/Dictionary.app' # cmd + space -> 'dic'
 alias dit='git'
 alias ds='diff --st'
 alias do='do' # do is keyword
@@ -1116,27 +1116,15 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opt/openssl/lib/pkgconfig
 # for pyenv
 export PATH="$HOME/.pyenv/shims:$PATH"
 
-# for jupiter-lab
-# juyter-labが止まって動かなくなったときに、追加した。2022。
-# [zsh: command not found: jupyter の対処法 | めがね先生の横道](https://megane-sensei.com/563/)
-# Finderで「JupyterLab.app」を探して、「情報を見る」で「場所: Machitosh HD・アプリケーション」と書かれている。
-# 実際、この場所をコピーすると、/Applicationsとなる。
-# しかし、which jupyterとすると、~/pyenv/shims/jupterだ。本当に意味があったのかな?
-# export PATH="/Applications:${PATH}"
-export PATH="${PATH}:/Applications"
+export DOTFILES=$HOME/dotfiles
+[ -f $DOTFILES/.zshrc_`uname` ] && . $DOTFILES/.zshrc_`uname`
+# unameがコマンドで、MacならDarwin、LinuxならLinuxになる。
+# 左式でファイルがあるか確かめ、あれば右式を実行する。
+# 参考:
+# .zshrcを色んな環境で共有する方法を考えてみた
+# https://qiita.com/catatsuy/items/00ebf78f56960b6d43c2
 
-
-# export EDITOR=code
-export HOMEBREW_EDITOR=code
-# brewコマンドを使ったら、以下のように言われたので設定してみる。2022/10/26
-# Warning: Using code because no editor was set in the environment.
-# This may change in the future, so we recommend setting EDITOR,
-# or HOMEBREW_EDITOR to your preferred text editor.
-# 警告: エディタが環境に設定されていないので、codeを使用しています。
-# これは将来変更されるかもしれないので、あなたの好みのテキストエディタを
-# EDITORか HOMEBREW_EDITORに設定することをオススメします。
-# なんか別にこだわりないし、もっと先進的なエディタがでたら乗り換えるよ、たぶん。
-# そんな先進的なエディタがでるのか知らないし、VScodeで満足してるところあるけど。
+export EDITOR=code
 
 # https://github.com/RomainFranceschini/icrystal
 export PATH="${PATH}:${HOME}/oss/icrystal/bin"
