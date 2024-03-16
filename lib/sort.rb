@@ -1,7 +1,5 @@
-# .gitconfigファイルのパス
+# ~/.gitconfigファイルを読み込む
 gitconfig_path = File.expand_path('~/.gitconfig')
-
-# ファイルを読み込み
 gitconfig_content = File.read(gitconfig_path)
 
 # [alias]セクションを見つける
