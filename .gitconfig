@@ -227,6 +227,8 @@
 	s = status
 	sc = switch -c
 	sd = diff --stat
+	sh = show
+	sm = switch main
 	sp = stash pop
 	ss = status -s
 	st = status
@@ -235,7 +237,6 @@
 	stat = status
 	statd = diff --stat
 	statu = status
-	sm = switch main
 	sw = switch
 	swc = switch -c
 	swm = switch main
