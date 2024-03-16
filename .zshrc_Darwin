@@ -1,3 +1,15 @@
+# .zshrc For Mac(Darwin)
+# .zshrcに以下のように書き、Macで呼び出される。
+#
+# export DOTFILES=$HOME/dotfiles
+# [ -f $DOTFILES/.zshrc_`uname` ] && . $DOTFILES/.zshrc_`uname`
+#
+# unameがコマンドで、MacならDarwin、LinuxならLinuxになる。
+# 左式でファイルがあるか確かめ、あれば右式を実行する。
+# Qiita: .zshrcを色んな環境で共有する方法を考えてみた
+# https://qiita.com/catatsuy/items/00ebf78f56960b6d43c2
+
+
 alias dic='open /System/Applications/Dictionary.app' # cmd + space -> 'dic'
 
 # for jupiter-lab
