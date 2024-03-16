@@ -151,6 +151,7 @@ alias ..2='cd ../..'
 alias ..3='cd ../../..'
 alias .files='cd ~/dotfiles'
 
+### alias a ###
 alias a='git add'
 alias a.='git add .'
 alias ac-library='cd ~/rubybook/ac-library-rb'
@@ -167,6 +168,7 @@ alias ame='git commit --amend'
 alias amen='git commit --amend'
 alias amend='git commit --amend'
 
+### alias b ###
 # alias b='bundle'
 alias b='git branch'
 alias bc='./bin/console'
@@ -231,6 +233,7 @@ alias bwp='bundle install --without production'
 alias bx='bundle exec'
 alias bw='./bin/webpack-dev-server'
 
+### alias c ###
 alias c='clear'
 # alias c='code'
 alias c.='code .'
@@ -263,7 +266,7 @@ alias cmam='git commit --amend'
 alias cmad='git commit --amend'
 alias cme='git commit --allow-empty'
 alias cmem='git commit --allow-empty -m'
-alias co='git checkout' # switch使えば必要ないのでは。
+# alias co='git checkout' # switchかrestoreを使えば必要ない?
 # alias co='code' # codeはcでよく使うので、coはgit checkoutに割り当てる。
 alias co.='code .'
 alias co.='code ..'
@@ -301,6 +304,7 @@ alias czenn='code ~/zenn-content'
 alias czsh='code ~/.zshrc'
 alias czshrc='code ~/.zshrc'
 
+### alias d ###
 alias d='git diff'
 alias dm='git diff main'
 alias d1='git diff HEAD~'
@@ -332,6 +336,7 @@ alias dstag='git diff --staged'
 alias dstage='git diff --staged'
 alias dstat='git diff --stat'
 
+### alias e ###
 alias ef='eslint --fix'
 alias elif='elif' # `elif` is a keyword for shell
 alias es='eslint --fix'
@@ -339,6 +344,7 @@ alias esac='esac' # `esac` is a keyword for shell
 alias exc='code .git/info/exclude'
 alias exclude='code .git/info/exclude'
 
+### alias f ###
 alias f='open'
 alias fi='fi' # `fi` is keyword for shell
 alias fin='open'
@@ -352,6 +358,7 @@ alias furikaeri='git log --reverse --date=iso --since="1week" --pretty=format:"[
 alias furikaeri='git log --reverse --date=iso --since="1week" --pretty=format:"[%cd] %h: %s"'
 # pretty=format
 
+### alias g ###
 alias g='git'
 alias ga='git add'
 alias ga.='git add .'
@@ -397,7 +404,7 @@ alias gd4='git diff HEAD~4'
 alias gemail='git config user.email'
 alias gf='git fetch'
 alias gg='git graph'
-alias gh='gh'
+# alias gh='gh'
 
 alias gi='git'
 alias gia='git add'
@@ -471,7 +478,7 @@ alias girs='git reset --soft'
 alias gist='git status'
 alias gists='git status -s'
 
-alias git='git'
+#alias git='git'
 alias gita='git add'
 alias gita.='git add .'
 alias gitad='git add'
@@ -486,7 +493,7 @@ alias gitcmam='git commit --amend'
 alias gitcoa='git commit --amend'
 alias gitcommita='git commit --amend'
 alias gitcommitamend='git commit --amend'
-alias gitconfig='code .gitconfig'
+alias gitconfig='code ~/.gitconfig'
 alias gitd='git diff'
 alias gitdc='git diff --cached'
 alias gitlocalname='git config user.name'
@@ -581,6 +588,7 @@ alias gswi='git switch'
 alias gswitch='git switch'
 alias gswitchc='git switch -c'
 
+### alias h ###
 # alias h='cd ~' # home
 alias h='heroku'
 alias hc='heroku create'
@@ -607,6 +615,7 @@ alias hr='heroku'
 alias hro='heroku open'
 alias hurikaeri='git log --reverse --date=iso --since="1week" --pretty=format:"[%cr] %h: %s"'
 
+alias help='man'
 alias hero='heroku'
 alias herok='heroku'
 alias heroku='heroku'
@@ -621,19 +630,24 @@ alias hrrdmg='heroku run rails db:migrate'
 alias hrrdbmg='heroku run rails db:migrate'
 alias ht='HEADED=1 rails test:all'
 
+### alias i ###
 alias ie='code .git/info/exclude'
 alias if='if' # if is keyword of shell script
-alias ijs='osascript -l JavaScript -i'
+alias ijs='osascript -l JavaScript -i' # JavaScript intepreter?
 alias in='git add'
 alias ind='git add'
 alias index='git add'
 
+### alias j ###
+
+### alias k ###
 alias k='kill -9'
 alias k9='kill -9'
 alias kr='k9 $(head -n 1 ./tmp/pids/server.pid)'
 alias krails='k9 $(head -n 1 ./tmp/pids/server.pid)'
 alias k9r='k9 $(head -n 1 ./tmp/pids/server.pid)'
 
+### alias l ###
 alias l='ls'
 alias la='ls -A'
 alias lal='ls -Al'
@@ -649,13 +663,16 @@ alias localhost3000='open http://localhost:3000/'
 alias log='log'
 alias ls='ls'
 alias lst='git log --stat'
+alias ls-file="git ls-files"
+alias ls-files="git ls-files"
 alias logs='git log --stat'
 alias logst='git log --stat'
 alias ls1='ls -1F'
 alias lsf='ls -F'
 alias l1='git log --oneline'
-alias l1g='git --graph --oneline'
+alias l1g='git log --graph --oneline'
 
+### alias m ###
 alias m='mkdir'
 alias makedir='mkdir'
 alias md='mkdir'
@@ -669,8 +686,11 @@ alias mstatus='rails db:migrate:status'
 alias mv='mv'
 alias mvi='mv -i'
 
+### alias n ###
 # alias n='git checkout -b'
 alias n='n'
+alias nameonly='git diff --name-only'
+alias name-only='git diff --name-only'
 alias nd='node'
 alias nj='node'
 alias nm='npm'
@@ -685,8 +705,10 @@ alias np='npm'
 alias nx='npx'
 alias nzp='npx zenn preview'
 
+### alias o ###
 alias o='open'
 alias om='heroku addons:open mailgun'
+alias oneline='git log --oneline'
 alias op='open'
 alias ope='open'
 alias or='open http://localhost:3000/'
@@ -706,6 +728,7 @@ alias o80='open http://localhost:8000/'
 alias o800='open http://localhost:8000/'
 alias o8000='open http://localhost:8000/'
 
+### alias p ###
 alias phm='git push heroku main'
 alias pl='git pull'
 alias pll='git pull'
@@ -720,7 +743,9 @@ alias psoms='git push origin master'
 alias pull='git pull'
 alias push='git push'
 
+### alias q ###
 
+### alias r ###
 alias r='rails'
 alias ra='rails'
 alias rac='rails console'
@@ -757,8 +782,8 @@ alias rcac='rails dev:cache'
 alias rcach='rails dev:cache'
 alias rcache='rails dev:cache'
 alias rd='rails db'
-alias rddp'rails db:drop'
-alias rddr'rails db:drop'
+alias rddp='rails db:drop'
+alias rddr='rails db:drop'
 alias rdbdrop='rails db:drop'
 alias rdbc='rails db:create'
 alias rdbm='rails db:migrate'
@@ -842,6 +867,7 @@ alias rv='rbenv versions'
 alias rversions='rbenv versions'
 alias rwc='rails webpacker:compile'
 
+### alias s ###
 alias s='git status'
 alias sbp='source ~/.bash_profile'
 alias sl='ln -s'
@@ -865,11 +891,13 @@ alias swm='git switch main'
 alias swich='git switch'
 alias switch='git switch'
 
+### alias t ###
 alias t='date +"%m/%d(%a) %H:%M:%S"'
 alias tasks='rake --tasks'
 alias then='then' # `then` is a keyword for shell
 alias time='time'
 
+### alias u ###
 alias u='cd ..'
 alias u2='cd ../..'
 alias u2='cd ../../..'
@@ -881,16 +909,18 @@ alias until='until' # `until` is a keyword for shell
 alias us='git restore --staged'
 alias ust='git restore --staged'
 
+### alias v ###
 # alias v='vim'
 # alias v='code'
-; alias vag='vagrant'
-; alias vagrant='vagrant'
+# alias vag='vagrant'
+# alias vagrant='vagrant'
 alias vs='(){z $1 && code . && cd -}'
 alias vs.='code.'
 alias vscode='(){z $1 && code . && cd -}'
 alias vscode.='code.'
 alias vz='vim ~/dotfiles/.zshrc'
 
+### alias w ###
 alias wc='wc'
 alias wds='bin/webpack-dev-server'
 alias webpack-dev-server='bin/webpack-dev-server'
@@ -898,6 +928,9 @@ alias while='while' # `while` is a keyword for shell
 alias ws='bin/webpack-dev-server'
 alias wserver='bin/webpack-dev-server'
 
+### alias x ###
+
+### alias y ###
 alias y='yarn'
 alias ya='yarn'
 alias yar='yarn'
@@ -905,6 +938,8 @@ alias yi='yarn install'
 alias yic='yarn install --check-files'
 alias yicf='yarn install --check-files'
 
+### alias  ###
+# alias z='z'
 alias zenn='npx zenn'
 alias zennserve='npx zenn preview'
 alias zennpre='npx zenn preview'

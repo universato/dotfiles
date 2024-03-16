@@ -1,6 +1,7 @@
 [user]
-	# name = universato
+	name = universato
 	username = universato
+	email = universato@gmail.com
 	# リポジトリごとに user.name や user.email の設定を強制する
 	# https://qiita.com/uasi/items/a340bb487ec07caac799
 	useConfigOnly = true
@@ -155,9 +156,13 @@
 	mr = merge
 	n = checout -b
 	name = config user.name
+	nameonly = diff --name-only
+	name-only = diff --name-only
 	new = checout -b
+	no = diff --name-only
 	nt = tag -n
 	ntag = tag -n
+	oneline = log --oneline
 	pfom = push -f origin main
 	ph = push heroku
 	phm = push heroku main
