@@ -13,8 +13,8 @@
 ```sh
 cd ~
 mv .gemrc dotfiles
+ln -s ~/dotfiles/.gemrc ~/.gemrc
 ```
-
 
 VS Code
 ```zsh

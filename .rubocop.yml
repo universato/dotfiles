@@ -1,0 +1,15 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - app/**/*
+    - bin/**/*
+    - config/**/*
+    - config.ru
+    - db/*.rb
+    - db/seeds.rb
+    - db/seed/**/*
+    - db/seeds/**/*
+    - Gemfile
+    - Rakefile
+Style/FrozenStringLiteralComment:
+  Enabled: false
