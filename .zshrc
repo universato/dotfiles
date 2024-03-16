@@ -689,6 +689,7 @@ alias mvi='mv -i'
 ### alias n ###
 # alias n='git checkout -b'
 alias n='n'
+alias name='git diff --name-only'
 alias nameonly='git diff --name-only'
 alias name-only='git diff --name-only'
 alias nd='node'

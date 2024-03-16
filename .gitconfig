@@ -155,7 +155,8 @@
 	mg = merge
 	mr = merge
 	n = checout -b
-	name = config user.name
+	# name = config user.name
+	name = diff --name-only
 	nameonly = diff --name-only
 	name-only = diff --name-only
 	new = checout -b
@@ -255,5 +256,6 @@
 	unst = restore --staged
 	unstage = restore --staged
 	us = restore --staged
+	username = config user.name
 [url "https://"]
 	insteadOf = git://
