@@ -1139,7 +1139,7 @@ export DOTFILES=$HOME/dotfiles
 # .zshrcを色んな環境で共有する方法を考えてみた
 # https://qiita.com/catatsuy/items/00ebf78f56960b6d43c2
 
-export EDITOR=code
+# export EDITOR=code
 
 # https://github.com/RomainFranceschini/icrystal
 export PATH="${PATH}:${HOME}/oss/icrystal/bin"
