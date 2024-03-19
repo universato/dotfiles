@@ -163,6 +163,8 @@
 	no = diff --name-only
 	nt = tag -n
 	ntag = tag -n
+	ol = log --oneline
+	ol1 = log --oneline -1
 	oneline = log --oneline
 	pfom = push -f origin main
 	ph = push heroku
@@ -241,6 +243,7 @@
 	swc = switch -c
 	swm = switch main
 	swi = switch
+	swich = switch # for typo
 	swim = switch main
 	swima = switch main
 	swimai = switch main
@@ -258,5 +261,6 @@
 	unstage = restore --staged
 	us = restore --staged
 	username = config user.name
+	# 1l = log --oneline # bad config
 [url "https://"]
 	insteadOf = git://
