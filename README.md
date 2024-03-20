@@ -21,11 +21,11 @@ VS Code
 ```zsh
 cd ~/Library/Application Support/Code/User
 mv keybindings.json ~/dotfiles/vscode/keybindings.json
-ln -s ~/dotfiles/vscode/keybindings.json keybindings.json
+ln -s ~/dotfiles/vscode/keybindings.json ~/keybindings.json
 mv settings.json ~/dotfiles/vscode/settings.json
-ln -s ~/dotfiles/vscode/settings.json settings.json
+ln -s ~/dotfiles/vscode/settings.json ~/settings.json
 mv snippets ~/dotfiles/vscode/snippets
-ln -s ~/dotfiles/vscode/snippets snippets
+ln -s ~/dotfiles/vscode/snippets ~/snippets
 ```
 
 ```sh
