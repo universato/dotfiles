@@ -51,6 +51,7 @@ alias ....='cd ../../..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
 alias .files='cd ~/dotfiles'
+alias -- -='cd -'
 
 ### alias a ###
 alias a='git add'
@@ -250,6 +251,8 @@ alias es='eslint --fix'
 alias esac='esac' # `esac` is a keyword for shell
 alias exc='code .git/info/exclude'
 alias exclude='code .git/info/exclude'
+alias exp='"C:\Windows\explorer.exe"'
+alias expl='"C:\Windows\explorer.exe"'
 
 ### alias f ###
 alias f='open'
@@ -439,6 +442,7 @@ alias glgo='git log --oneline --graph'
 alias glg1='git log --oneline --graph'
 alias gl1g='git log --oneline --graph'
 alias gl1='git log --oneline'
+alias gm='git merge'
 alias gmail='git config user.email'
 alias gmerge='git merge'
 alias gname='git config user.name'
@@ -983,9 +987,7 @@ export PATH="$PATH:/usr/local/bin/" # For npm global install by homebrew
 # ${HOME}/.asdf/installs/nodejs/16.2.0/.npm/lib
 # ${HOME}/.asdf/installs/nodejs/16.2.0/.npm/lib/node_modules
 
-# Unknown command: `asdf where nodejs`ってでた。2022/4/24
-# export PATH="$PATH:$(asdf where nodejs)/.npm/bin" # For npm command by asdf using global install
-export PATH="/usr/local/opt/bzip2/bin:$PATH"
+
 
 # https://github.com/amberframework/amber/issues/1163
 # https://crystal-lang.org/install/on_mac_os/
@@ -994,24 +996,17 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opt/openssl/lib/pkgconfig
 # for pyenv
 export PATH="$HOME/.pyenv/shims:$PATH"
 
-export DOTFILES=$HOME/dotfiles
-[ -f $DOTFILES/.zshrc_`uname` ] && . $DOTFILES/.zshrc_`uname`
-# unameがコマンドで、MacならDarwin、LinuxならLinuxになる。
-# 左式でファイルがあるか確かめ、あれば右式を実行する。
-# 参考:
-# .zshrcを色んな環境で共有する方法を考えてみた
-# https://qiita.com/catatsuy/items/00ebf78f56960b6d43c2
 
 # export EDITOR=code
 
 # https://github.com/RomainFranceschini/icrystal
 export PATH="${PATH}:${HOME}/oss/icrystal/bin"
 
-
-
 ## for debug
 # echo $PATH | tr ":" "\n"ß
 
-# bison for 3.8.2 macOS
-# https://stackoverflow.com/questions/24835116/bison-latest-version-installed-but-not-in-use
-export PATH="/usr/local/opt/bison/bin:$PATH"
+# WindowsでPATHの一覧を見る。:を改行\nに置換。
+# sed /    /   \\ $' \ /g
+# echo $PATH | sed s/:/\\$'\n'/g
+# echo $PATH | sed 's/:/\'$'\n/g
+# echo $PATH | tr ':' '\n'

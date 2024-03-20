@@ -8,7 +8,7 @@
 [color]
 	ui = true
 [core]
-	excludesfile = /Users/uni/.gitignore
+	excludesfile = ~/.gitignore
 [init]
 	defaultBranch = main
 [alias]

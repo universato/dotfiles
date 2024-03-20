@@ -13,6 +13,11 @@ Thumbs.db
 *~
 *.un~
 
+# Exccel
+~$*.xls
+~$*.xlsx
+~$*.xlsm
+
 tmp.*
 tmp
 temp.*
