@@ -1,26 +1,4 @@
-# for rbenv
-export PATH="/usr/local/bin:$PATH"
-eval "$(rbenv init -)"
-# echo "$(rbenv init - zsh)" と書くと、zsh用の補完機能が働くらしい。古い情報かも。なくても普通に補完されるような。
-
-# rbenvがaliasに登録されてると次のようなエラーがでる。unalias rbenv。
-# $ eval "$(rbenv init -)"
-# zsh: defining function based on alias `rbenv'
-# zsh: parse error near `()'
-# $ which rbenv
-# rbenv: aliased to rbenv
-
-# rbenv initをやってると、~/.rbenv/shimsがPATHに登録される。
-#
-
-# Terminal # ~/zprofile
-# if [ -f ~/.bashrc ]; then
-
-## NVM_DIRに、管理してるNode.js等がある。
-## nvm か nodebrew が有名なバージョン管理ツール。asdf
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-
+echo ".bash_profile"
 
 # zshrc_useful.sh by mollifier-san
 # https://gist.github.com/mollifier/4979906
@@ -31,7 +9,7 @@ alias sudo='sudo '
 
 # z command
 # https://github.com/rupa/z
-. ~/bin/z/z.sh
+. ~/z/z.sh
 
 # ブランチを補完する。
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh
@@ -201,8 +179,6 @@ alias create='git switch -c'
 # alias cryst='crystal'
 # alias crysta='crystal'
 # alias crystal='crystal'
-# alias crystal='$HOME/.asdf/installs/crystal/0.33.0/bin/crystal'
-# alias crystal='$HOME/.asdf/installs/crystal/1.0.0/bin/crystal'
 alias cs='code ~/Library/"Application Support"/Code/User/snippets'
 alias csn='code ~/Library/"Application Support"/Code/User/snippets'
 alias csni='code ~/Library/"Application Support"/Code/User/snippets'
@@ -805,6 +781,7 @@ alias rwc='rails webpacker:compile'
 ### alias s ###
 alias s='git status'
 alias sbp='source ~/.bash_profile'
+alias scbp='source `pwd`/.bash_profile'
 alias show='git show'
 alias sl='ln -s'
 alias sm='git switch main'
@@ -843,6 +820,7 @@ alias unst='git restore --staged'
 alias unstage='git restore --staged'
 alias until='until' # `until` is a keyword for shell
 alias us='git restore --staged'
+alias userprofile="expl 'C:\Users\unive\'"
 alias ust='git restore --staged'
 
 ### alias v ###
@@ -966,28 +944,11 @@ export PATH="$PATH:$HOME/bin"
 
 export AC_LIBRARY_PATH="${HOME}/rubybook/ac-library-rb"
 
-# export PATH="$PATH:$HOME/.asdf/shims"
-
-# 2022/4/24, これを入れないと0.9.0になる。
-# export ASDF_DIR="/usr/local/Cellar/asdf/0.10.0/libexec"
-export ASDF_DIR="/usr/local/opt/asdf/libexec"
-
-. /usr/local/opt/asdf/libexec/asdf.sh
-# ↑
-# $ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
-
 # echo ${ZDOTDIR:-~}
-# /Users/uni
 
 export PATH="/usr/local/sbin:$PATH"
 # export PATH="$PATH:${HOME}/node_modules/.bin"
 export PATH="$PATH:/usr/local/bin/" # For npm global install by homebrew
-
-# npm list -g
-# ${HOME}/.asdf/installs/nodejs/16.2.0/.npm/lib
-# ${HOME}/.asdf/installs/nodejs/16.2.0/.npm/lib/node_modules
-
-
 
 # https://github.com/amberframework/amber/issues/1163
 # https://crystal-lang.org/install/on_mac_os/
