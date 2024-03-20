@@ -788,15 +788,20 @@ alias rale='rake'
 alias rb='ruby'
 alias rb18='rbenv local 1.8.6'
 alias rb25='rbenv local 2.5.8'
-alias rb26='rbenv local 2.6.6'
-alias rb27='rbenv local 2.7.1'
+alias rb26='rbenv local 2.6.8'
+alias rb27='rbenv local 2.7.4'
 alias rb271='rbenv local 2.7.1'
+alias rb274='rbenv local 2.7.4'
 alias rbenv271='rbenv local 2.7.1'
+alias rbenv271='rbenv local 2.7.4'
 alias rbenvv='rbenv versions'
 alias rbg='rbenv global'
-alias rbg27='rbenv global 2.7.1'
-alias rbg3='rbenv global 3.0.0'
-alias rbg30='rbenv global 3.0.0'
+alias rbg27='rbenv global 2.7.4'
+alias rbg271='rbenv global 2.7.1'
+alias rbg274='rbenv global 2.7.4'
+alias rbg3='rbenv global 3.0.2'
+alias rbg30='rbenv global 3.0.2'
+alias rbg32='rbenv global 3.2.3'
 # alias rbl='rbenv local'
 alias rbv='rbenv versions'
 alias rbversions='rbenv versions'
@@ -972,7 +977,7 @@ alias zennpre='npx zenn preview'
 alias zennpreview='npx zenn preview'
 alias zp='npx zenn preview'
 alias zs='npx zenn preview'
-alias zshrc='cd ~/dotfiles/.zshrc'
+alias zshrc='code ~/dotfiles/.zshrc'
 
 alias 1l='git log --oneline'
 
@@ -1003,6 +1008,29 @@ alias until='until'
 
 # 世の中のエンジニアのalias設定 - Qiita
 # https://qiita.com/reireias/items/d906ab086c3bc4c22147
+
+switch_branch() {
+    if [ -n "$ZSH_VERSION" ]; then
+      branches=("${(@f)$(git branch | sed 's/[\* \t]//g')}")
+    elif [ -n "$BASH_VERSION" ]; then
+        readarray -t branches < <(git branch | sed 's/\*//g; s/^[ \t]*//; s/[ \t]*$//')
+    else
+        echo "Unsupported shell."
+        exit 1
+    fi
+
+    # echo "利用可能なブランチ:"
+    select branch in "${branches[@]}"; do
+        if [ -n "$branch" ]; then
+            git switch "$branch"
+            break
+        else
+            echo "無効な選択です。もう一度試してください。"
+            break
+        fi
+    done
+}
+
 
 #### zsh の右プロンプトを2行にする - Qiita
 #### https://qiita.com/eexiech8aNahShee/items/355cd4d884ce03656285
