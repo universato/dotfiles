@@ -1,4 +1,4 @@
-echo ".bash_profile"
+# echo '.bash_profile'
 
 # zshrc_useful.sh by mollifier-san
 # https://gist.github.com/mollifier/4979906
@@ -20,8 +20,6 @@ fpath=(~/.zsh $fpath)
 # echo FPATH
 # echo $FPATH | tr ':' '\n'
 # echo ''
-
-
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -227,8 +225,10 @@ alias es='eslint --fix'
 alias esac='esac' # `esac` is a keyword for shell
 alias exc='code .git/info/exclude'
 alias exclude='code .git/info/exclude'
-alias exp='"C:\Windows\explorer.exe"'
-alias expl='"C:\Windows\explorer.exe"'
+alias exp='explorer'
+alias expl='explorer'
+alias explorer='"C:\Windows\explorer.exe"'
+alias explorer='explorer'
 
 ### alias f ###
 alias f='open'
@@ -887,9 +887,10 @@ alias until='until'
 
 switch_branch() {
     if [ -n "$ZSH_VERSION" ]; then
-      branches=("${(@f)$(git branch | sed 's/[\* \t]//g')}")
+        branches=("${(@f)$(git branch | sed 's/[\* \t]//g')}")
     elif [ -n "$BASH_VERSION" ]; then
         readarray -t branches < <(git branch | sed 's/\*//g; s/^[ \t]*//; s/[ \t]*$//')
+        # readarray -t branches < <(git branch -vv)
     else
         echo "Unsupported shell."
         exit 1
