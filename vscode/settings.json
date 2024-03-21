@@ -238,5 +238,8 @@
     },
     "editor.renderWhitespace": "all",
     "window.zoomLevel": 1,
-    "editor.unicodeHighlight.ambiguousCharacters": false
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "workbench.editorAssociations": {
+        "git-rebase-todo": "default"
+    }
 }
