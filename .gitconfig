@@ -9,6 +9,8 @@
 	ui = true
 [core]
 	excludesfile = ~/.gitignore
+	quotepath = false
+	autocrlf = false
 [init]
 	defaultBranch = main
 [alias]
