@@ -34,8 +34,8 @@ def switch_branch
       selected_branch_name = branches[i].split[0].gsub(/\e\[\d*(;\d+)*m/, '')
       puts "\tgit switch #{selected_branch_name}"
       stdout, stderr, status = Open3.capture3('git', 'switch', selected_branch_name)
-      puts stdout
-      puts stderr
+      puts stdout unless stdout.empty?
+      puts stderr unless stderr.empty?
     else
       puts 'Invalid number!!'
     end
