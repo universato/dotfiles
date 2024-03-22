@@ -767,6 +767,8 @@ alias psh='git push'
 alias psoms='git push origin master'
 alias pull='git pull'
 alias push='git push'
+alias py='python'
+alias python='python'
 
 ### alias q ###
 
