@@ -241,5 +241,6 @@
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "workbench.editorAssociations": {
         "git-rebase-todo": "default"
-    }
+    },
+    "hediet.vscode-drawio.resizeImages": null
 }
