@@ -1198,3 +1198,6 @@ typeset -U PATH
 # bison for 3.8.2 macOS
 # https://stackoverflow.com/questions/24835116/bison-latest-version-installed-but-not-in-use
 export PATH="/usr/local/opt/bison/bin:$PATH"
+
+# 86400sec = 24 hours
+export HOMEBREW_AUTO_UPDATE_SECS=86400
