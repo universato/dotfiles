@@ -828,9 +828,9 @@ alias ust='git restore --staged'
 # alias v='code'
 # alias vag='vagrant'
 # alias vagrant='vagrant'
-alias vs='(){z $1 && code . && cd -}'
+# alias vs='(){z $1 && code . && cd -}'
 alias vs.='code.'
-alias vscode='(){z $1 && code . && cd -}'
+# alias vscode='(){z $1 && code . && cd -}'
 alias vscode.='code.'
 alias vz='vim ~/dotfiles/.zshrc'
 
@@ -884,6 +884,32 @@ alias until='until'
 
 # 世の中のエンジニアのalias設定 - Qiita
 # https://qiita.com/reireias/items/d906ab086c3bc4c22147
+
+chrome() {
+    if [ -z "$1" ]; then
+        echo "Usage: chrome <file_path_or_url>"
+        return 1
+    fi
+
+    # パスをLinux形式に変換
+    local chrome_path="C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+
+    # 絶対パスを取得
+    if [ -f "$1" ]; then
+        local file_path=$(realpath "$1")
+        "$chrome_path" "$file_path"
+    else
+        "$chrome_path" "$1"
+    fi
+}
+
+vs() {
+    z "$1" && code . && cd -
+}
+
+vscode() {
+    z "$1" && code . && cd -
+}
 
 switch_branch() {
     if [ -n "$ZSH_VERSION" ]; then
@@ -972,3 +998,8 @@ export PATH="${PATH}:${HOME}/oss/icrystal/bin"
 # echo $PATH | sed s/:/\\$'\n'/g
 # echo $PATH | sed 's/:/\'$'\n/g
 # echo $PATH | tr ':' '\n'
+
+# alias python='"~\AppData\Local\Programs\Python\Python312\python.exe"'
+alias python="${HOME}/AppData/Local/Programs/Python/Python312/python.exe"
+
+export PATH="${PATH}:${HOME}/AppData/Local/Programs/Python/Python312/"
